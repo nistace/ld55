@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 536919246902785355}
-  - component: {fileID: 782159919993056364}
+  - component: {fileID: 6548501338654174750}
   - component: {fileID: 8495536015341424698}
   - component: {fileID: 4123031699097339580}
   m_Layer: 0
-  m_Name: EvilFireBall
+  m_Name: FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +35,7 @@ Transform:
   - {fileID: 4732759998543079625}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &782159919993056364
+--- !u!114 &6548501338654174750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6457770469741024645}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 980a8ebc4e0c56c45b62870304f27274, type: 3}
+  m_Script: {fileID: 11500000, guid: 45644d0a3dd043878a4d774e2a79f65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 8495536015341424698}
@@ -60,9 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b683681bf840a79a4bed9dc6f10ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
-  currentHealth: 3
-  speed: 1
+  type: {fileID: 11400000, guid: f665799eefc4c4c4d9d4afe1b68a09eb, type: 2}
 --- !u!114 &4123031699097339580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,6 +92,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 2f3907c7ab46f7b4a9b3e11471b339c9, type: 2}
+    - target: {fileID: 2613769410677034311, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4037163003331258016, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -101,6 +103,10 @@ PrefabInstance:
     - target: {fileID: 5190194636169423669, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063314214046953347, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

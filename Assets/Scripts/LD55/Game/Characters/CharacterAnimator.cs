@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using NiUtils.Extensions;
+using UnityEngine;
 using UnityEngine.Rendering;
 
 namespace LD55.Game {
@@ -11,9 +12,17 @@ namespace LD55.Game {
 		private static readonly int movementXAnimParam = Animator.StringToHash("MovementX");
 		private static readonly int movementYAnimParam = Animator.StringToHash("MovementY");
 
+		public Animator Animator => animator;
+
 		private void Reset() {
 			characterController = GetComponent<CharacterController>();
 			sortingGroup = GetComponentInChildren<SortingGroup>();
+		}
+
+		private void Start() {
+			foreach (var child in animator.transform.Children()) {
+				child.gameObject.SetActive(child.name == characterController.Type.name);
+			}
 		}
 
 		private void Update() {

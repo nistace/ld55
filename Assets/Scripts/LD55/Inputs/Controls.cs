@@ -34,6 +34,87 @@ namespace LD55.Inputs
                     ""type"": ""PassThrough"",
                     ""id"": ""e861a287-7d34-4dba-b8d0-b36fc74da93b"",
                     ""expectedControlType"": ""Vector2"",
+                    ""processors"": ""StickDeadzone"",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Summon"",
+                    ""type"": ""Button"",
+                    ""id"": ""bf04132c-253b-4e63-a28e-eddc223b3fbe"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SummonA"",
+                    ""type"": ""Button"",
+                    ""id"": ""ca81d098-656c-48ee-bd42-3505d2af10b6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SummonB"",
+                    ""type"": ""Button"",
+                    ""id"": ""9b70da6f-0847-49d1-880a-31aa4eaef3e0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SummonC"",
+                    ""type"": ""Button"",
+                    ""id"": ""2b61d353-fab7-414c-9527-d836f60cf175"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SummonD"",
+                    ""type"": ""Button"",
+                    ""id"": ""b226f0c5-dd0c-405e-b76d-22efe1c51d6d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SummonE"",
+                    ""type"": ""Button"",
+                    ""id"": ""291d6244-b5ff-4c8a-8560-61d12e6139e9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SummonF"",
+                    ""type"": ""Button"",
+                    ""id"": ""cde8123c-ba02-41b2-ab03-6f6b192924b4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SummonG"",
+                    ""type"": ""Button"",
+                    ""id"": ""cb2403ce-1a43-420f-9f11-e63ed83ac312"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SummonH"",
+                    ""type"": ""Button"",
+                    ""id"": ""13a3f289-59f2-41d8-93cb-bb892e53a6fd"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -105,6 +186,204 @@ namespace LD55.Inputs
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9a65bf36-7a71-458a-ab24-9183c52779fa"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Summon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4a34d7a6-df90-4c25-8933-6d961db9ee33"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Summon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a52475a5-6825-44ee-b010-94d7bd9502f5"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonA"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""220321e5-1ace-42d1-87de-513185dd021a"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonA"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e5d1eba1-3ff5-4863-9213-d726b8847136"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonB"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c7983d65-f8d9-49e3-8325-39966307fa33"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonB"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""db210c0e-e833-44b9-acf0-67fb32dd2825"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonC"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2160e2f8-cedf-43fd-8792-b3e34e9a2f41"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonC"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""33ac65fe-c6dc-4555-b5ef-652c7c72625c"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonD"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""12e1cfff-5063-4603-a035-f85ecc33c7b6"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonD"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f558e47c-bc9d-4122-ac64-60f986c6b943"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonE"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf6c71bd-77e1-41f9-b3a6-e81cc1e977d4"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonE"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""37d461a0-625c-4bd2-adad-0e9dd3b52a9c"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonF"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2c5c9e86-9875-4cb1-bfdb-5f85e891c2aa"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonF"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""413835c3-bc7c-434d-83ca-4320dfda6f9f"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonG"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ebb63d7d-fbe7-4fd0-8b23-b408874ac652"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonG"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e7c60546-bda2-4936-a696-2180454f6b81"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonH"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1772cd27-3971-41fc-81a9-09188bb16b44"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonH"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -114,6 +393,15 @@ namespace LD55.Inputs
             // Player
             m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
             m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
+            m_Player_Summon = m_Player.FindAction("Summon", throwIfNotFound: true);
+            m_Player_SummonA = m_Player.FindAction("SummonA", throwIfNotFound: true);
+            m_Player_SummonB = m_Player.FindAction("SummonB", throwIfNotFound: true);
+            m_Player_SummonC = m_Player.FindAction("SummonC", throwIfNotFound: true);
+            m_Player_SummonD = m_Player.FindAction("SummonD", throwIfNotFound: true);
+            m_Player_SummonE = m_Player.FindAction("SummonE", throwIfNotFound: true);
+            m_Player_SummonF = m_Player.FindAction("SummonF", throwIfNotFound: true);
+            m_Player_SummonG = m_Player.FindAction("SummonG", throwIfNotFound: true);
+            m_Player_SummonH = m_Player.FindAction("SummonH", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -176,11 +464,29 @@ namespace LD55.Inputs
         private readonly InputActionMap m_Player;
         private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
         private readonly InputAction m_Player_Movement;
+        private readonly InputAction m_Player_Summon;
+        private readonly InputAction m_Player_SummonA;
+        private readonly InputAction m_Player_SummonB;
+        private readonly InputAction m_Player_SummonC;
+        private readonly InputAction m_Player_SummonD;
+        private readonly InputAction m_Player_SummonE;
+        private readonly InputAction m_Player_SummonF;
+        private readonly InputAction m_Player_SummonG;
+        private readonly InputAction m_Player_SummonH;
         public struct PlayerActions
         {
             private @Controls m_Wrapper;
             public PlayerActions(@Controls wrapper) { m_Wrapper = wrapper; }
             public InputAction @Movement => m_Wrapper.m_Player_Movement;
+            public InputAction @Summon => m_Wrapper.m_Player_Summon;
+            public InputAction @SummonA => m_Wrapper.m_Player_SummonA;
+            public InputAction @SummonB => m_Wrapper.m_Player_SummonB;
+            public InputAction @SummonC => m_Wrapper.m_Player_SummonC;
+            public InputAction @SummonD => m_Wrapper.m_Player_SummonD;
+            public InputAction @SummonE => m_Wrapper.m_Player_SummonE;
+            public InputAction @SummonF => m_Wrapper.m_Player_SummonF;
+            public InputAction @SummonG => m_Wrapper.m_Player_SummonG;
+            public InputAction @SummonH => m_Wrapper.m_Player_SummonH;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -193,6 +499,33 @@ namespace LD55.Inputs
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
+                @Summon.started += instance.OnSummon;
+                @Summon.performed += instance.OnSummon;
+                @Summon.canceled += instance.OnSummon;
+                @SummonA.started += instance.OnSummonA;
+                @SummonA.performed += instance.OnSummonA;
+                @SummonA.canceled += instance.OnSummonA;
+                @SummonB.started += instance.OnSummonB;
+                @SummonB.performed += instance.OnSummonB;
+                @SummonB.canceled += instance.OnSummonB;
+                @SummonC.started += instance.OnSummonC;
+                @SummonC.performed += instance.OnSummonC;
+                @SummonC.canceled += instance.OnSummonC;
+                @SummonD.started += instance.OnSummonD;
+                @SummonD.performed += instance.OnSummonD;
+                @SummonD.canceled += instance.OnSummonD;
+                @SummonE.started += instance.OnSummonE;
+                @SummonE.performed += instance.OnSummonE;
+                @SummonE.canceled += instance.OnSummonE;
+                @SummonF.started += instance.OnSummonF;
+                @SummonF.performed += instance.OnSummonF;
+                @SummonF.canceled += instance.OnSummonF;
+                @SummonG.started += instance.OnSummonG;
+                @SummonG.performed += instance.OnSummonG;
+                @SummonG.canceled += instance.OnSummonG;
+                @SummonH.started += instance.OnSummonH;
+                @SummonH.performed += instance.OnSummonH;
+                @SummonH.canceled += instance.OnSummonH;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -200,6 +533,33 @@ namespace LD55.Inputs
                 @Movement.started -= instance.OnMovement;
                 @Movement.performed -= instance.OnMovement;
                 @Movement.canceled -= instance.OnMovement;
+                @Summon.started -= instance.OnSummon;
+                @Summon.performed -= instance.OnSummon;
+                @Summon.canceled -= instance.OnSummon;
+                @SummonA.started -= instance.OnSummonA;
+                @SummonA.performed -= instance.OnSummonA;
+                @SummonA.canceled -= instance.OnSummonA;
+                @SummonB.started -= instance.OnSummonB;
+                @SummonB.performed -= instance.OnSummonB;
+                @SummonB.canceled -= instance.OnSummonB;
+                @SummonC.started -= instance.OnSummonC;
+                @SummonC.performed -= instance.OnSummonC;
+                @SummonC.canceled -= instance.OnSummonC;
+                @SummonD.started -= instance.OnSummonD;
+                @SummonD.performed -= instance.OnSummonD;
+                @SummonD.canceled -= instance.OnSummonD;
+                @SummonE.started -= instance.OnSummonE;
+                @SummonE.performed -= instance.OnSummonE;
+                @SummonE.canceled -= instance.OnSummonE;
+                @SummonF.started -= instance.OnSummonF;
+                @SummonF.performed -= instance.OnSummonF;
+                @SummonF.canceled -= instance.OnSummonF;
+                @SummonG.started -= instance.OnSummonG;
+                @SummonG.performed -= instance.OnSummonG;
+                @SummonG.canceled -= instance.OnSummonG;
+                @SummonH.started -= instance.OnSummonH;
+                @SummonH.performed -= instance.OnSummonH;
+                @SummonH.canceled -= instance.OnSummonH;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -220,6 +580,15 @@ namespace LD55.Inputs
         public interface IPlayerActions
         {
             void OnMovement(InputAction.CallbackContext context);
+            void OnSummon(InputAction.CallbackContext context);
+            void OnSummonA(InputAction.CallbackContext context);
+            void OnSummonB(InputAction.CallbackContext context);
+            void OnSummonC(InputAction.CallbackContext context);
+            void OnSummonD(InputAction.CallbackContext context);
+            void OnSummonE(InputAction.CallbackContext context);
+            void OnSummonF(InputAction.CallbackContext context);
+            void OnSummonG(InputAction.CallbackContext context);
+            void OnSummonH(InputAction.CallbackContext context);
         }
     }
 }
