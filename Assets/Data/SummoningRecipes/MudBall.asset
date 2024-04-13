@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   summoningLine: ABBGB
   summoningPrefab: {fileID: 6548501338654174750, guid: 8483c097c1e668b4b9aeb5afa7543421, type: 3}
-  summoningSprite: {fileID: -8859350812436947706, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
+  summoningSprite: {fileID: 412225682612639871, guid: d6574406a77426e4591149c4c04a5de4, type: 3}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4123031699097339580}
   - component: {fileID: 3805311355601562709}
   m_Layer: 0
-  m_Name: VillageIdiot
+  m_Name: TorchMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b683681bf840a79a4bed9dc6f10ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: {fileID: 11400000, guid: 3605c837c2cd2a249a9a4bf703d3ed1c, type: 2}
+  type: {fileID: 11400000, guid: 33d6ff3a8a132b74487bc8e423445934, type: 2}
 --- !u!114 &4123031699097339580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 8495536015341424698}
-  combatStrategy: {fileID: 11400000, guid: 851dbc79ba4f2144199e41656098bf39, type: 2}
+  combatStrategy: {fileID: 11400000, guid: fe9d246985aaa2e4c85a12c96f89a342, type: 2}
 --- !u!1001 &3241362457698949060
 PrefabInstance:
   m_ObjectHideFlags: 0

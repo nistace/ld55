@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using LD55.Game.Enemies;
 using NiUtils.Extensions;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,8 +12,13 @@ namespace LD55.Game {
 		private int NextSummoningToUpdate { get; set; }
 		private float StartTime { get; set; }
 		private float TimeSinceStart => Time.time - StartTime;
+		private int CurrentWaveIndex { get; set; }
+		private float CurrentWaveStartTime { get; set; }
+		private float CurrentWaveTime => Time.time - CurrentWaveStartTime;
+		private EnemyWaveDescriptor.Wave CurrentWave => enemyWaveDescriptor.GetWave(CurrentWaveIndex);
+		private int CurrentWaveCoefficient => enemyWaveDescriptor.GetWaveCoefficient(CurrentWaveIndex);
 		private Dictionary<Team, List<AiCharacter>> CharactersPerTeam { get; } = new Dictionary<Team, List<AiCharacter>>();
-		private Dictionary<EnemyWaveDescriptor.EnemyWaveItem, float> ProgressPerEnemyWaveItem { get; } = new Dictionary<EnemyWaveDescriptor.EnemyWaveItem, float>();
+		private Dictionary<AiCharacter, float> EnemySpawnProgress { get; } = new Dictionary<AiCharacter, float>();
 
 		public UnityEvent OnPlayerDied => player.CharacterController.OnDied;
 
@@ -23,13 +27,12 @@ namespace LD55.Game {
 			CharactersPerTeam.Add(Team.Enemy, new List<AiCharacter>());
 			CombatGlobalParameters.Clear();
 			CombatGlobalParameters.SubscribeTargetOfTeam(Team.Player, player.CharacterController);
-
-			foreach (var enemyWaveItem in enemyWaveDescriptor.EnemyWaveItems) {
-				ProgressPerEnemyWaveItem.Add(enemyWaveItem, 0);
-			}
+			enemyWaveDescriptor.AllDistinctSpawnableEnemies().ForEach(t => EnemySpawnProgress.Add(t, 0));
 
 			player.Summoner.OnRecipeSummoned.AddListenerOnce(HandleRecipeSummoned);
 
+			CurrentWaveIndex = 0;
+			CurrentWaveStartTime = Time.time;
 			StartTime = Time.time;
 		}
 
@@ -50,17 +53,25 @@ namespace LD55.Game {
 		}
 
 		public void Update() {
-			UpdateEnemySpawn();
+			UpdateEnemyWave();
 			UpdateNextEnemy();
 			UpdateNextSummoning();
 		}
 
-		private void UpdateEnemySpawn() {
-			foreach (var t in enemyWaveDescriptor.EnemyWaveItems) {
-				ProgressPerEnemyWaveItem[t] += t.SpawnRateCurve.Evaluate(TimeSinceStart) * Time.deltaTime;
-				while (ProgressPerEnemyWaveItem[t] > 1) {
-					SpawnEnemy(t.CharacterPrefab);
-					ProgressPerEnemyWaveItem[t]--;
+		private void UpdateEnemyWave() {
+			if (CurrentWaveTime > CurrentWave.Duration) {
+				CurrentWaveIndex++;
+				CurrentWaveStartTime = Time.time;
+			}
+
+			if (CurrentWaveTime > 0) {
+				foreach (var waveEnemy in CurrentWave.WaveEnemies) {
+					var enemyPrefab = waveEnemy.CharacterPrefab;
+					EnemySpawnProgress[enemyPrefab] += CurrentWaveCoefficient * waveEnemy.SpawnRateCurve.Evaluate(TimeSinceStart / CurrentWaveTime) * Time.deltaTime;
+					while (EnemySpawnProgress[enemyPrefab] > 1) {
+						SpawnEnemy(enemyPrefab);
+						EnemySpawnProgress[enemyPrefab]--;
+					}
 				}
 			}
 		}

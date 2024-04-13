@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   summoningLine: CEDAFAGA
   summoningPrefab: {fileID: 6548501338654174750, guid: 6a661ceb28cea5e49befe52b09c30f0f, type: 3}
-  summoningSprite: {fileID: 7512864349049210156, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
+  summoningSprite: {fileID: 5875568261540078225, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
