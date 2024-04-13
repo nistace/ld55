@@ -2,11 +2,18 @@
 using UnityEngine;
 
 namespace LD55.Game {
+	[RequireComponent(typeof(CharacterController))]
 	public class PlayerController : MonoBehaviour {
-		[SerializeField] protected float speed = 1;
+		[SerializeField] protected CharacterController characterController;
+
+		public CharacterController CharacterController => characterController;
+
+		private void Reset() {
+			characterController = GetComponent<CharacterController>();
+		}
 
 		private void Update() {
-			transform.position += (Vector3)InputManager.Controls.Player.Movement.ReadValue<Vector2>() * (speed * Time.deltaTime);
+			characterController.Move(InputManager.Controls.Player.Movement.ReadValue<Vector2>());
 		}
 	}
 }

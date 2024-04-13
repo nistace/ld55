@@ -72,8 +72,8 @@ ScriptedImporter:
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
     fileImportMode: 1
-    importHiddenLayers: 0
-    layerImportMode: 1
+    importHiddenLayers: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 9
     customPivotPosition: {x: 0.5, y: 0.25}
@@ -85,8 +85,8 @@ ScriptedImporter:
     addShadowCasters: 0
   asepriteImporterSettings:
     fileImportMode: 1
-    importHiddenLayers: 0
-    layerImportMode: 1
+    importHiddenLayers: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 9
     customPivotPosition: {x: 0.5, y: 0.25}
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638485753506618301
+  platformSettingsDirtyTick: 638485789227642644
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,78 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: characters
+  - name: EvilFireBall_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.75}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 124
+      width: 10
+      height: 16
+    spriteID: be3e6ee9fa21df242b5e4a48285234c1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 124}
+  - name: EvilFireBall_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.6875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 148
+      width: 10
+      height: 16
+    spriteID: 7305a14c0612eae4b8f287d374223647
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 148}
+  - name: EvilFireBall_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.8571429}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 23
+      y: 124
+      width: 10
+      height: 14
+    spriteID: 9a49bbf9ad7bc8f4190889f5d1568558
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 23, y: 124}
+  - name: EvilFireBall_Frame_3
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.6875}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 8
-      height: 17
-    spriteID: 5d1c9a37f878bdf489eabd8154572524
+      width: 11
+      height: 16
+    spriteID: e6d392885e64d6543987719319a6815d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,23 +201,1064 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: EvilFireBall_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: -0.75}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 172
+      width: 10
+      height: 16
+    spriteID: a411d8e63ec431548bfe3c017c8157e0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 172}
+  - name: EvilFireBall_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: -0.6875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 196
+      width: 10
+      height: 16
+    spriteID: f3bb8f1dee69344469f0aa4e8aa81bfe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 196}
+  - name: EvilFireBall_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: -0.8571429}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 23
+      y: 146
+      width: 10
+      height: 14
+    spriteID: ff6b4205161b306419d5089ae3ab9b5c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 23, y: 146}
+  - name: EvilFireBall_Frame_7
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.6875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 28
+      width: 11
+      height: 16
+    spriteID: e4cdffa649ed306449287e60e4fe8963
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 28}
+  - name: EvilFireBall_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: -0.75}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 220
+      width: 10
+      height: 16
+    spriteID: 81eb11c0273deb945ab60ba2119b24ce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 220}
+  - name: EvilFireBall_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: -0.6875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 23
+      y: 4
+      width: 10
+      height: 16
+    spriteID: a20171ab0539bcf4fa11c2278f88a9b1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 23, y: 4}
+  - name: EvilFireBall_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: -0.8571429}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 23
+      y: 168
+      width: 10
+      height: 14
+    spriteID: b52e99d558796b141b827db221d85c72
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 23, y: 168}
+  - name: EvilFireBall_Frame_11
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.6875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 52
+      width: 11
+      height: 16
+    spriteID: f10a13e7eeb69b04ab58a8c0e1df55a6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 52}
+  - name: EvilFireBall_Frame_12
+    originalName: 
+    pivot: {x: 0.5, y: -0.75}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 23
+      y: 28
+      width: 10
+      height: 16
+    spriteID: 7b1255b6aaaf94e41b997cdcddad8077
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 23, y: 28}
+  - name: EvilFireBall_Frame_13
+    originalName: 
+    pivot: {x: 0.5, y: -0.6875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 23
+      y: 52
+      width: 10
+      height: 16
+    spriteID: 676e41bb28fa52c4497b83b65319fe28
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 23, y: 52}
+  - name: EvilFireBall_Frame_14
+    originalName: 
+    pivot: {x: 0.5, y: -0.8571429}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 23
+      y: 190
+      width: 10
+      height: 14
+    spriteID: a47fbe55085d83b47841df09d631ee5e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 23, y: 190}
+  - name: EvilFireBall_Frame_15
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.6875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 76
+      width: 11
+      height: 16
+    spriteID: 6b231599b6a21f9499d9bfb4c62bfe7e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 76}
+  - name: EvilFireBall_Frame_16
+    originalName: 
+    pivot: {x: 0.5, y: -0.75}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 23
+      y: 76
+      width: 10
+      height: 16
+    spriteID: 475d95455064da94b9f68d40450d6cd4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 23, y: 76}
+  - name: EvilFireBall_Frame_17
+    originalName: 
+    pivot: {x: 0.5, y: -0.6875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 23
+      y: 100
+      width: 10
+      height: 16
+    spriteID: 28517e8116ce230499a4e45972ccdb1c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 23, y: 100}
+  - name: EvilFireBall_Frame_18
+    originalName: 
+    pivot: {x: 0.5, y: -0.8571429}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 23
+      y: 212
+      width: 10
+      height: 14
+    spriteID: aa369b2aad0aa3640a384a8a82975ded
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 23, y: 212}
+  - name: EvilFireBall_Frame_19
+    originalName: 
+    pivot: {x: 0.45454547, y: -0.6875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 100
+      width: 11
+      height: 16
+    spriteID: ca34e5d670e981f4da3eed027d85ef7e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 100}
+  - name: Goblin_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 41
+      y: 70
+      width: 8
+      height: 17
+    spriteID: 55a70c4039bcb52449c28fa6ccba51d7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 41, y: 70}
+  - name: Goblin_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 41
+      y: 220
+      width: 8
+      height: 16
+    spriteID: 84bdc30fd328e2f4da672351c3be41c3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 41, y: 220}
+  - name: Goblin_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 41
+      y: 95
+      width: 8
+      height: 17
+    spriteID: 7b5da88e300156348aade3db6d101a1f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 41, y: 95}
+  - name: Goblin_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 4
+      width: 8
+      height: 16
+    spriteID: 58456127a51e4b1409439b269d260157
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 4}
+  - name: Goblin_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.05882353}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 41
+      y: 120
+      width: 8
+      height: 17
+    spriteID: a934f8c7174848c45ab7fdc015c654b3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 41, y: 120}
+  - name: Goblin_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 28
+      width: 8
+      height: 15
+    spriteID: c402a9023e51f5a42917537f337f6e99
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 28}
+  - name: Goblin_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.05882353}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 41
+      y: 145
+      width: 8
+      height: 17
+    spriteID: 61154da2e0693374b9d5cb433f153f59
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 41, y: 145}
+  - name: Goblin_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 51
+      width: 8
+      height: 15
+    spriteID: 4b0eeb8955777f846a707e514e5bff6e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 51}
+  - name: Goblin_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.05882353}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 41
+      y: 170
+      width: 8
+      height: 17
+    spriteID: aee594bf1b728c343950396e2806d237
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 41, y: 170}
+  - name: Goblin_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 74
+      width: 8
+      height: 15
+    spriteID: 1c2a9a8ce59441a429052f6a90ae2641
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 74}
+  - name: Goblin_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.05882353}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 41
+      y: 195
+      width: 8
+      height: 17
+    spriteID: a5dc1ffcd87f59d4ca43129953a40ff1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 41, y: 195}
+  - name: Goblin_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 97
+      width: 8
+      height: 15
+    spriteID: c331da84791075d418e766643a604252
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 97}
+  - name: Goblin_Frame_12
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 23
+      y: 234
+      width: 10
+      height: 14
+    spriteID: 3d3fe694de66ae7488ef4a15c9d1b473
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 23, y: 234}
+  - name: Goblin_Frame_13
+    originalName: 
+    pivot: {x: 0.42857146, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 120
+      width: 7
+      height: 15
+    spriteID: 790670e26eaba27478bd73c0d29d9644
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 120}
+  - name: Goblin_Frame_14
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 41
+      y: 4
+      width: 10
+      height: 14
+    spriteID: 1f50ed8352f372f4ba33b39a3a244653
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 41, y: 4}
+  - name: Goblin_Frame_15
+    originalName: 
+    pivot: {x: 0.42857146, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 143
+      width: 7
+      height: 15
+    spriteID: ab023899715f5af4684bf90a1501a284
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 143}
+  - name: Goblin_Frame_16
+    originalName: 
+    pivot: {x: 0.5714286, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 166
+      width: 7
+      height: 15
+    spriteID: 9496baa129ed8b84db647e839e093192
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 166}
+  - name: Goblin_Frame_17
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 41
+      y: 26
+      width: 10
+      height: 14
+    spriteID: da39a2170ddc4c148ab4a700f760467e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 41, y: 26}
+  - name: Goblin_Frame_18
+    originalName: 
+    pivot: {x: 0.5714286, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 189
+      width: 7
+      height: 15
+    spriteID: 4d108e3329f44514bade00f6a543bc8e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 189}
+  - name: Goblin_Frame_19
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 41
+      y: 48
+      width: 10
+      height: 14
+    spriteID: ec56bf734eda5c54b82f92b83f43c5c1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 41, y: 48}
   spriteSheetImportData: []
   asepriteLayers:
-  - layerIndex: 0
-    guid: 733184458
-    name: characters
-    layerFlags: 0
+  - layerIndex: 1
+    guid: -1395442860
+    name: EvilFireBall
+    layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: characters
+    - name: EvilFireBall_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 27
+        y: 28
+        width: 10
+        height: 16
+      spriteId: be3e6ee9fa21df242b5e4a48285234c1
+    - name: EvilFireBall_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 27
+        y: 27
+        width: 10
+        height: 16
+      spriteId: 7305a14c0612eae4b8f287d374223647
+    - name: EvilFireBall_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 27
+        y: 28
+        width: 10
+        height: 14
+      spriteId: 9a49bbf9ad7bc8f4190889f5d1568558
+    - name: EvilFireBall_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 26
+        y: 27
+        width: 11
+        height: 16
+      spriteId: e6d392885e64d6543987719319a6815d
+    - name: EvilFireBall_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 27
+        y: 28
+        width: 10
+        height: 16
+      spriteId: a411d8e63ec431548bfe3c017c8157e0
+    - name: EvilFireBall_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 27
+        y: 27
+        width: 10
+        height: 16
+      spriteId: f3bb8f1dee69344469f0aa4e8aa81bfe
+    - name: EvilFireBall_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 27
+        y: 28
+        width: 10
+        height: 14
+      spriteId: ff6b4205161b306419d5089ae3ab9b5c
+    - name: EvilFireBall_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 26
+        y: 27
+        width: 11
+        height: 16
+      spriteId: e4cdffa649ed306449287e60e4fe8963
+    - name: EvilFireBall_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 27
+        y: 28
+        width: 10
+        height: 16
+      spriteId: 81eb11c0273deb945ab60ba2119b24ce
+    - name: EvilFireBall_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 27
+        y: 27
+        width: 10
+        height: 16
+      spriteId: a20171ab0539bcf4fa11c2278f88a9b1
+    - name: EvilFireBall_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 27
+        y: 28
+        width: 10
+        height: 14
+      spriteId: b52e99d558796b141b827db221d85c72
+    - name: EvilFireBall_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 26
+        y: 27
+        width: 11
+        height: 16
+      spriteId: f10a13e7eeb69b04ab58a8c0e1df55a6
+    - name: EvilFireBall_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 27
+        y: 28
+        width: 10
+        height: 16
+      spriteId: 7b1255b6aaaf94e41b997cdcddad8077
+    - name: EvilFireBall_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 27
+        y: 27
+        width: 10
+        height: 16
+      spriteId: 676e41bb28fa52c4497b83b65319fe28
+    - name: EvilFireBall_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 27
+        y: 28
+        width: 10
+        height: 14
+      spriteId: a47fbe55085d83b47841df09d631ee5e
+    - name: EvilFireBall_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 26
+        y: 27
+        width: 11
+        height: 16
+      spriteId: 6b231599b6a21f9499d9bfb4c62bfe7e
+    - name: EvilFireBall_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 27
+        y: 28
+        width: 10
+        height: 16
+      spriteId: 475d95455064da94b9f68d40450d6cd4
+    - name: EvilFireBall_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 27
+        y: 27
+        width: 10
+        height: 16
+      spriteId: 28517e8116ce230499a4e45972ccdb1c
+    - name: EvilFireBall_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 27
+        y: 28
+        width: 10
+        height: 14
+      spriteId: aa369b2aad0aa3640a384a8a82975ded
+    - name: EvilFireBall_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 27
+        y: 27
+        width: 11
+        height: 16
+      spriteId: ca34e5d670e981f4da3eed027d85ef7e
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 0
+    guid: 1151128285
+    name: Goblin
+    layerFlags: 2
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Goblin_Frame_0
       frameIndex: 0
       cellRect:
         x: 28
         y: 16
         width: 8
         height: 17
-      spriteId: 5d1c9a37f878bdf489eabd8154572524
+      spriteId: 55a70c4039bcb52449c28fa6ccba51d7
+    - name: Goblin_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 28
+        y: 16
+        width: 8
+        height: 16
+      spriteId: 84bdc30fd328e2f4da672351c3be41c3
+    - name: Goblin_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 28
+        y: 16
+        width: 8
+        height: 17
+      spriteId: 7b5da88e300156348aade3db6d101a1f
+    - name: Goblin_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 28
+        y: 16
+        width: 8
+        height: 16
+      spriteId: 58456127a51e4b1409439b269d260157
+    - name: Goblin_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 28
+        y: 15
+        width: 8
+        height: 17
+      spriteId: a934f8c7174848c45ab7fdc015c654b3
+    - name: Goblin_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 28
+        y: 16
+        width: 8
+        height: 15
+      spriteId: c402a9023e51f5a42917537f337f6e99
+    - name: Goblin_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 28
+        y: 15
+        width: 8
+        height: 17
+      spriteId: 61154da2e0693374b9d5cb433f153f59
+    - name: Goblin_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 28
+        y: 16
+        width: 8
+        height: 15
+      spriteId: 4b0eeb8955777f846a707e514e5bff6e
+    - name: Goblin_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 28
+        y: 15
+        width: 8
+        height: 17
+      spriteId: aee594bf1b728c343950396e2806d237
+    - name: Goblin_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 28
+        y: 16
+        width: 8
+        height: 15
+      spriteId: 1c2a9a8ce59441a429052f6a90ae2641
+    - name: Goblin_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 28
+        y: 15
+        width: 8
+        height: 17
+      spriteId: a5dc1ffcd87f59d4ca43129953a40ff1
+    - name: Goblin_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 28
+        y: 16
+        width: 8
+        height: 15
+      spriteId: c331da84791075d418e766643a604252
+    - name: Goblin_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 27
+        y: 16
+        width: 10
+        height: 14
+      spriteId: 3d3fe694de66ae7488ef4a15c9d1b473
+    - name: Goblin_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 29
+        y: 16
+        width: 7
+        height: 15
+      spriteId: 790670e26eaba27478bd73c0d29d9644
+    - name: Goblin_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 27
+        y: 16
+        width: 10
+        height: 14
+      spriteId: 1f50ed8352f372f4ba33b39a3a244653
+    - name: Goblin_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 29
+        y: 16
+        width: 7
+        height: 15
+      spriteId: ab023899715f5af4684bf90a1501a284
+    - name: Goblin_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 28
+        y: 16
+        width: 7
+        height: 15
+      spriteId: 9496baa129ed8b84db647e839e093192
+    - name: Goblin_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 27
+        y: 16
+        width: 10
+        height: 14
+      spriteId: da39a2170ddc4c148ab4a700f760467e
+    - name: Goblin_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 28
+        y: 16
+        width: 7
+        height: 15
+      spriteId: 4d108e3329f44514bade00f6a543bc8e
+    - name: Goblin_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 27
+        y: 16
+        width: 10
+        height: 14
+      spriteId: ec56bf734eda5c54b82f92b83f43c5c1
     linkedCells: []
     parentIndex: -1
   platformSettings:
