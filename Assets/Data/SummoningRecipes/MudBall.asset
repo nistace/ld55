@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e12bf614ea426daaffe55e8ee70601, type: 3}
   m_Name: MudBall
   m_EditorClassIdentifier: 
-  summoningLine: ABBGB
+  summoningLine: FGFG
   summoningPrefab: {fileID: 6548501338654174750, guid: 8483c097c1e668b4b9aeb5afa7543421, type: 3}
-  summoningSprite: {fileID: 412225682612639871, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
+  summoningSprite: {fileID: 1408787838497732252, guid: d6574406a77426e4591149c4c04a5de4, type: 3}

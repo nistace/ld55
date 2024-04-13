@@ -128,6 +128,7 @@ MonoBehaviour:
   recipes:
   - {fileID: 11400000, guid: ccf3db8eaaf42094f8a4a84347a1f5df, type: 2}
   - {fileID: 11400000, guid: 47866ce6c3131034eb6cbaf347a63aff, type: 2}
+  - {fileID: 11400000, guid: c110a56b0f992864994523b3dfdf7507, type: 2}
   summonLocation: {fileID: 4638356852972550529}
   currentRecipeSummoningRenderer: {fileID: 1743853172000001334}
 --- !u!114 &888810301112417135
@@ -225,7 +226,7 @@ SpriteRenderer:
   m_Size: {x: 0.54, y: 0.54}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &4502933863216380393

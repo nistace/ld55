@@ -7,15 +7,23 @@ using UnityEngine.InputSystem;
 
 namespace LD55.Game {
 	public class Summoner : MonoBehaviour {
+		private const int LineLengthToLockRecipe = 3;
+		private const float MissesRatioToCancelSummoning = .5f;
+
 		[SerializeField] protected SummoningRecipe[] recipes;
 		[SerializeField] protected Transform summonLocation;
 		[SerializeField] protected SpriteRenderer currentRecipeSummoningRenderer;
 
 		public bool IsSummoning { get; private set; }
-		public int Level { get; set; }
-		private SummoningRecipe CurrentRecipe { get; set; }
-		private string CurrentSummoningLine { get; set; }
+		private int Level { get; set; } = 5;
+		public int CurrentRecipeIndex { get; private set; }
+		public SummoningRecipe CurrentRecipe => recipes[CurrentRecipeIndex];
+		public string CurrentSummoningLine { get; private set; }
 		public UnityEvent<SummoningRecipe, Vector2> OnRecipeSummoned { get; } = new UnityEvent<SummoningRecipe, Vector2>();
+		public UnityEvent OnSummoningStateChanged { get; } = new UnityEvent();
+		public UnityEvent OnSummoningCommandLineChanged { get; } = new UnityEvent();
+		public int UnlockedRecipesCount => Mathf.Min(Level, recipes.Length);
+		public bool IsCurrentRecipeLocked => CurrentSummoningLine.Length >= LineLengthToLockRecipe;
 
 		private void Start() {
 			RefreshSummoning(false, true);
@@ -40,8 +48,6 @@ namespace LD55.Game {
 			IsSummoning = summoning;
 			CurrentSummoningLine = string.Empty;
 			summonLocation.gameObject.SetActive(IsSummoning);
-			CurrentRecipe = default;
-			currentRecipeSummoningRenderer.enabled = false;
 			InputManager.Controls.Player.SummonA.SetPerformListenerOnce(HandleSummonAPressed, IsSummoning);
 			InputManager.Controls.Player.SummonB.SetPerformListenerOnce(HandleSummonBPressed, IsSummoning);
 			InputManager.Controls.Player.SummonC.SetPerformListenerOnce(HandleSummonCPressed, IsSummoning);
@@ -50,14 +56,17 @@ namespace LD55.Game {
 			InputManager.Controls.Player.SummonF.SetPerformListenerOnce(HandleSummonFPressed, IsSummoning);
 			InputManager.Controls.Player.SummonG.SetPerformListenerOnce(HandleSummonGPressed, IsSummoning);
 			InputManager.Controls.Player.SummonH.SetPerformListenerOnce(HandleSummonHPressed, IsSummoning);
+			OnSummoningStateChanged.Invoke();
 		}
 
 		private void RefreshBestMatchingRecipe() {
-			var bestMatchingRecipeScore = 0;
-			foreach (var recipe in recipes) {
+			var bestMatchingRecipeScore = GetRecipeScore(CurrentRecipe.SummoningLine);
+			for (var recipeIndex = 0; recipeIndex < recipes.Length; recipeIndex++) {
+				if (recipeIndex == CurrentRecipeIndex) continue;
+				var recipe = recipes[recipeIndex];
 				var recipeScore = GetRecipeScore(recipe.SummoningLine);
 				if (recipeScore > bestMatchingRecipeScore) {
-					CurrentRecipe = recipe;
+					CurrentRecipeIndex = recipeIndex;
 					bestMatchingRecipeScore = recipeScore;
 				}
 			}
@@ -68,23 +77,20 @@ namespace LD55.Game {
 		private void AppendSummoningCharacter(char additionalCharacter) {
 			if (!IsSummoning) return;
 			CurrentSummoningLine += additionalCharacter;
-			if (CurrentSummoningLine.Length < 6) {
+			if (CurrentSummoningLine.Length <= LineLengthToLockRecipe) {
 				RefreshBestMatchingRecipe();
 			}
-			else if (!CurrentRecipe) {
+			else if ((float)(CurrentSummoningLine.Length - GetRecipeScore(CurrentRecipe.SummoningLine)) / CurrentSummoningLine.Length >= MissesRatioToCancelSummoning) {
 				CurrentSummoningLine = string.Empty;
 			}
-
-			currentRecipeSummoningRenderer.enabled = CurrentRecipe;
-			if (CurrentRecipe) {
-				currentRecipeSummoningRenderer.sprite = CurrentRecipe.SummoningSprite;
-				if (CurrentRecipe.SummoningLine.Length == CurrentSummoningLine.Length) {
-					OnRecipeSummoned.Invoke(CurrentRecipe, summonLocation.position);
-					CurrentSummoningLine = string.Empty;
-					currentRecipeSummoningRenderer.enabled = false;
-					CurrentRecipe = null;
-				}
+			else if (CurrentRecipe.SummoningLine.Length == CurrentSummoningLine.Length) {
+				var recipe = CurrentRecipe;
+				CurrentSummoningLine = string.Empty;
+				OnRecipeSummoned.Invoke(recipe, summonLocation.position);
 			}
+
+			currentRecipeSummoningRenderer.sprite = CurrentRecipe.SummoningSprite;
+			OnSummoningCommandLineChanged.Invoke();
 		}
 
 		private void HandleSummonAPressed(InputAction.CallbackContext obj) => AppendSummoningCharacter('A');
@@ -95,5 +101,15 @@ namespace LD55.Game {
 		private void HandleSummonFPressed(InputAction.CallbackContext obj) => AppendSummoningCharacter('F');
 		private void HandleSummonGPressed(InputAction.CallbackContext obj) => AppendSummoningCharacter('G');
 		private void HandleSummonHPressed(InputAction.CallbackContext obj) => AppendSummoningCharacter('H');
+
+		public int ClampRecipeIndex(int index) => Mathf.Clamp(index, 0, recipes.Length);
+
+		public SummoningRecipe GetRecipe(int recipeIndex) => recipes[recipeIndex];
+
+		public void ChangeCurrentRecipeIndex(int index) {
+			if (IsCurrentRecipeLocked) return;
+			CurrentRecipeIndex = index.PosMod(UnlockedRecipesCount);
+			currentRecipeSummoningRenderer.sprite = CurrentRecipe.SummoningSprite;
+		}
 	}
 }

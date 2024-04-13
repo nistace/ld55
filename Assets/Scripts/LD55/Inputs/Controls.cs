@@ -118,6 +118,24 @@ namespace LD55.Inputs
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SummonPageNext"",
+                    ""type"": ""Button"",
+                    ""id"": ""9ae8e2f0-c178-45f9-b6e0-57549f7e7729"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SummonPagePrevious"",
+                    ""type"": ""Button"",
+                    ""id"": ""c2a05982-962f-4a69-89a4-9b32920f9336"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -211,17 +229,6 @@ namespace LD55.Inputs
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a52475a5-6825-44ee-b010-94d7bd9502f5"",
-                    ""path"": ""<Gamepad>/dpad/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SummonA"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""220321e5-1ace-42d1-87de-513185dd021a"",
                     ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
@@ -233,12 +240,12 @@ namespace LD55.Inputs
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e5d1eba1-3ff5-4863-9213-d726b8847136"",
-                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""id"": ""a52475a5-6825-44ee-b010-94d7bd9502f5"",
+                    ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SummonB"",
+                    ""action"": ""SummonA"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -255,12 +262,12 @@ namespace LD55.Inputs
                 },
                 {
                     ""name"": """",
-                    ""id"": ""db210c0e-e833-44b9-acf0-67fb32dd2825"",
-                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""id"": ""e5d1eba1-3ff5-4863-9213-d726b8847136"",
+                    ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SummonC"",
+                    ""action"": ""SummonB"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -277,12 +284,12 @@ namespace LD55.Inputs
                 },
                 {
                     ""name"": """",
-                    ""id"": ""33ac65fe-c6dc-4555-b5ef-652c7c72625c"",
-                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""id"": ""db210c0e-e833-44b9-acf0-67fb32dd2825"",
+                    ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SummonD"",
+                    ""action"": ""SummonC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -299,12 +306,12 @@ namespace LD55.Inputs
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f558e47c-bc9d-4122-ac64-60f986c6b943"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""id"": ""33ac65fe-c6dc-4555-b5ef-652c7c72625c"",
+                    ""path"": ""<Gamepad>/dpad/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SummonE"",
+                    ""action"": ""SummonD"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -321,12 +328,12 @@ namespace LD55.Inputs
                 },
                 {
                     ""name"": """",
-                    ""id"": ""37d461a0-625c-4bd2-adad-0e9dd3b52a9c"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""id"": ""f558e47c-bc9d-4122-ac64-60f986c6b943"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SummonF"",
+                    ""action"": ""SummonE"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -343,12 +350,12 @@ namespace LD55.Inputs
                 },
                 {
                     ""name"": """",
-                    ""id"": ""413835c3-bc7c-434d-83ca-4320dfda6f9f"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""id"": ""37d461a0-625c-4bd2-adad-0e9dd3b52a9c"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SummonG"",
+                    ""action"": ""SummonF"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -365,12 +372,12 @@ namespace LD55.Inputs
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e7c60546-bda2-4936-a696-2180454f6b81"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""id"": ""413835c3-bc7c-434d-83ca-4320dfda6f9f"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SummonH"",
+                    ""action"": ""SummonG"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -382,6 +389,61 @@ namespace LD55.Inputs
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""SummonH"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e7c60546-bda2-4936-a696-2180454f6b81"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonH"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b6a8a4b8-d4b2-4c3e-b699-db2d3cb60a93"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonPageNext"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bbe8babc-0273-4b22-8af4-d2384e15cee8"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonPageNext"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f6b4d8b0-1a65-4292-b447-333e94a34323"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonPagePrevious"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b60ce388-ca2b-45c7-831f-75c6f4c8541f"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SummonPagePrevious"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -402,6 +464,8 @@ namespace LD55.Inputs
             m_Player_SummonF = m_Player.FindAction("SummonF", throwIfNotFound: true);
             m_Player_SummonG = m_Player.FindAction("SummonG", throwIfNotFound: true);
             m_Player_SummonH = m_Player.FindAction("SummonH", throwIfNotFound: true);
+            m_Player_SummonPageNext = m_Player.FindAction("SummonPageNext", throwIfNotFound: true);
+            m_Player_SummonPagePrevious = m_Player.FindAction("SummonPagePrevious", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -473,6 +537,8 @@ namespace LD55.Inputs
         private readonly InputAction m_Player_SummonF;
         private readonly InputAction m_Player_SummonG;
         private readonly InputAction m_Player_SummonH;
+        private readonly InputAction m_Player_SummonPageNext;
+        private readonly InputAction m_Player_SummonPagePrevious;
         public struct PlayerActions
         {
             private @Controls m_Wrapper;
@@ -487,6 +553,8 @@ namespace LD55.Inputs
             public InputAction @SummonF => m_Wrapper.m_Player_SummonF;
             public InputAction @SummonG => m_Wrapper.m_Player_SummonG;
             public InputAction @SummonH => m_Wrapper.m_Player_SummonH;
+            public InputAction @SummonPageNext => m_Wrapper.m_Player_SummonPageNext;
+            public InputAction @SummonPagePrevious => m_Wrapper.m_Player_SummonPagePrevious;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -526,6 +594,12 @@ namespace LD55.Inputs
                 @SummonH.started += instance.OnSummonH;
                 @SummonH.performed += instance.OnSummonH;
                 @SummonH.canceled += instance.OnSummonH;
+                @SummonPageNext.started += instance.OnSummonPageNext;
+                @SummonPageNext.performed += instance.OnSummonPageNext;
+                @SummonPageNext.canceled += instance.OnSummonPageNext;
+                @SummonPagePrevious.started += instance.OnSummonPagePrevious;
+                @SummonPagePrevious.performed += instance.OnSummonPagePrevious;
+                @SummonPagePrevious.canceled += instance.OnSummonPagePrevious;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -560,6 +634,12 @@ namespace LD55.Inputs
                 @SummonH.started -= instance.OnSummonH;
                 @SummonH.performed -= instance.OnSummonH;
                 @SummonH.canceled -= instance.OnSummonH;
+                @SummonPageNext.started -= instance.OnSummonPageNext;
+                @SummonPageNext.performed -= instance.OnSummonPageNext;
+                @SummonPageNext.canceled -= instance.OnSummonPageNext;
+                @SummonPagePrevious.started -= instance.OnSummonPagePrevious;
+                @SummonPagePrevious.performed -= instance.OnSummonPagePrevious;
+                @SummonPagePrevious.canceled -= instance.OnSummonPagePrevious;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -589,6 +669,8 @@ namespace LD55.Inputs
             void OnSummonF(InputAction.CallbackContext context);
             void OnSummonG(InputAction.CallbackContext context);
             void OnSummonH(InputAction.CallbackContext context);
+            void OnSummonPageNext(InputAction.CallbackContext context);
+            void OnSummonPagePrevious(InputAction.CallbackContext context);
         }
     }
 }

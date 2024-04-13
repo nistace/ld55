@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25ed35be1f864de6af1086f970eaf375, type: 3}
-  m_Name: FireBall
+  m_Script: {fileID: 11500000, guid: 508c3f60eef14ac295d4341442710c48, type: 3}
+  m_Name: sHell
   m_EditorClassIdentifier: 
-  displayName: Fire Ball
-  role: 
-  maxHealth: 10
-  speed: 1.5
-  armor: 0
+  tankRange: 0.3

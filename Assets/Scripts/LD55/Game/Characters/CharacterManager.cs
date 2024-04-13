@@ -8,6 +8,7 @@ namespace LD55.Game {
 		[SerializeField] protected EnemyWaveDescriptor enemyWaveDescriptor;
 		[SerializeField] protected PlayerController player;
 
+		public PlayerController Player => player;
 		private int NextMonsterToUpdate { get; set; }
 		private int NextSummoningToUpdate { get; set; }
 		private float StartTime { get; set; }
@@ -59,6 +60,8 @@ namespace LD55.Game {
 		}
 
 		private void UpdateEnemyWave() {
+			if (player.CharacterController.IsDead) return;
+
 			if (CurrentWaveTime > CurrentWave.Duration) {
 				CurrentWaveIndex++;
 				CurrentWaveStartTime = Time.time;

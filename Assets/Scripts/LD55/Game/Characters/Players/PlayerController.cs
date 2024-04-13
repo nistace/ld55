@@ -19,7 +19,7 @@ namespace LD55.Game {
 			characterController.Move(InputManager.Controls.Player.Movement.ReadValue<Vector2>());
 		}
 
-		public Vector2 Position { get; }
+		public Vector2 Position => CharacterController.Position;
 		public void TakeDamage(int damage) => characterController.TakeDamage(damage);
 	}
 }

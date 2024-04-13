@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ed35be1f864de6af1086f970eaf375, type: 3}
   m_Name: Torchman
   m_EditorClassIdentifier: 
-  maxHealth: 8
+  displayName: 
+  role: 
+  maxHealth: 10
   speed: 1
+  armor: 0
