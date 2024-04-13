@@ -1,8 +1,9 @@
-﻿using NiUtils.Extensions;
+﻿using LD55.Menu.Ui;
+using NiUtils.Extensions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Menu {
+namespace LD55.Menu {
 	public class MenuSceneController : MonoBehaviour {
 		[SerializeField] private MenuUi ui;
 
