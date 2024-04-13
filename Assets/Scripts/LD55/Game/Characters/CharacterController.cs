@@ -11,8 +11,6 @@ namespace LD55.Game {
 		public bool IsDead => CurrentHealth <= 0;
 		private Vector2 LastMovement { get; set; }
 		public Vector2 LastMovementNormalized { get; private set; }
-		private float NextAllowedAttackTime { get; set; }
-		public CombatantData CombatantData => type.CombatantData;
 
 		public UnityEvent OnTookDamage { get; } = new UnityEvent();
 		public UnityEvent OnDied { get; } = new UnityEvent();
@@ -29,8 +27,6 @@ namespace LD55.Game {
 			transform.position += (Vector3)LastMovement;
 		}
 
-		public void Attack(ICombatTarget target) { }
-
 		public void TakeDamage(int damage) {
 			if (damage <= 0) return;
 			if (CurrentHealth <= 0) return;
@@ -41,6 +37,5 @@ namespace LD55.Game {
 				OnAnyCharacterDied.Invoke(this);
 			}
 		}
-
 	}
 }

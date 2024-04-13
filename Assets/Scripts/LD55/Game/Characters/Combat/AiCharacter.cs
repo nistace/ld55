@@ -9,7 +9,6 @@ namespace LD55.Game {
 
 		public CharacterController CharacterController => characterController;
 
-		public CombatantData CombatantData => characterController.CombatantData;
 		public Vector2 Position => characterController.Position;
 		private float NextAllowedAttackTime { get; set; }
 		public ICombatTarget Target { get; private set; }
@@ -22,10 +21,10 @@ namespace LD55.Game {
 
 		public void Move(Vector2 targetPosition) => characterController.Move(targetPosition);
 
-		public void Attack(ICombatTarget target) {
+		public void Attack(ICombatTarget target, int attackDamage, float delayBetweenAttacks) {
 			if (NextAllowedAttackTime > Time.time) return;
-			target.TakeDamage(CombatantData.AttackDamage);
-			NextAllowedAttackTime = Time.time + CombatantData.DelayBetweenAttacks;
+			target.TakeDamage(attackDamage);
+			NextAllowedAttackTime = Time.time + delayBetweenAttacks;
 		}
 
 		public void TakeDamage(int damage) => characterController.TakeDamage(damage);

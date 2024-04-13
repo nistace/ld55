@@ -2,10 +2,6 @@
 
 namespace LD55.Game {
 	public static class CombatGlobalParameters {
-		public enum Team {
-			Player = 0,
-			Enemy = 1
-		}
 
 		private static Dictionary<Team, HashSet<ICombatTarget>> targetsPerTeam { get; } = new Dictionary<Team, HashSet<ICombatTarget>>();
 

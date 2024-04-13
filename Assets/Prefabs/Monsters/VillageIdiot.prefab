@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4123031699097339580}
   - component: {fileID: 3805311355601562709}
   m_Layer: 0
-  m_Name: Goblin
+  m_Name: VillageIdiot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 8495536015341424698}
-  combatStrategy: {fileID: 7875218668446571371, guid: 184cb1286f3639048a48e5f99d568206, type: 3}
+  combatStrategy: {fileID: 11400000, guid: 851dbc79ba4f2144199e41656098bf39, type: 2}
 --- !u!1001 &3241362457698949060
 PrefabInstance:
   m_ObjectHideFlags: 0
