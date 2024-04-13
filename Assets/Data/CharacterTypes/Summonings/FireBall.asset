@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   speed: 1.2
+  combatantData:
+    attackRange: 0.5
+    attackDamage: 2
+    attackSpeed: 1

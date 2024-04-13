@@ -68,7 +68,6 @@ namespace LD55.Game {
 		private void AppendSummoningCharacter(char additionalCharacter) {
 			if (!IsSummoning) return;
 			CurrentSummoningLine += additionalCharacter;
-			Debug.Log(CurrentSummoningLine);
 			if (CurrentSummoningLine.Length < 6) {
 				RefreshBestMatchingRecipe();
 			}

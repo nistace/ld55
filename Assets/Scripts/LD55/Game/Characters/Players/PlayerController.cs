@@ -18,5 +18,8 @@ namespace LD55.Game {
 			if (summoner.IsSummoning) return;
 			characterController.Move(InputManager.Controls.Player.Movement.ReadValue<Vector2>());
 		}
+
+		public Vector2 Position { get; }
+		public void TakeDamage(int damage) => characterController.TakeDamage(damage);
 	}
 }

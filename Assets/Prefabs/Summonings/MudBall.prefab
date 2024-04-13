@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 8495536015341424698}
+  combatStrategy: {fileID: 7875218668446571371, guid: 184cb1286f3639048a48e5f99d568206, type: 3}
 --- !u!114 &8495536015341424698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +94,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 2f3907c7ab46f7b4a9b3e11471b339c9, type: 2}
     - target: {fileID: 2613769410677034311, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081730747291495978, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
