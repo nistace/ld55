@@ -973,7 +973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6762cc3a473479ca62e462f3feeb066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyWaveDescriptor: {fileID: 11400000, guid: cf0d3034b73a1ca4b9f3510411f0b9d1, type: 2}
+  enemyWaveDescriptor: {fileID: 11400000, guid: a200c0fc8379d744a87af27a43540211, type: 2}
   player: {fileID: 342417200}
 --- !u!1001 &237008829
 PrefabInstance:

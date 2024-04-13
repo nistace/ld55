@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PitchforkMan
   m_EditorClassIdentifier: 
   attackRange: 1
-  attackDamage: 3
+  attackDamage: 2
   attackSpeed: 1

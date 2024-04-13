@@ -2,12 +2,14 @@
 
 namespace LD55.Game
 {
-    [CreateAssetMenu(menuName = "Combat/" + nameof(DefaultAiCombatStrategy))]
-    public class DefaultAiCombatStrategy : AiCombatStrategy
+    [CreateAssetMenu(menuName = "Combat/" + nameof(RangedAiCombatStrategy))]
+    public class RangedAiCombatStrategy : AiCombatStrategy
     {
-        [SerializeField] protected float attackRange = .5f;
-        [SerializeField] protected int attackDamage = 1;
+        [SerializeField] protected float attackRange = 5f;
+        [SerializeField] protected Projectile projectilePrefab;
         [SerializeField] protected float attackSpeed = 1;
+        [SerializeField] protected Vector2 originYOffset = new Vector2(0, .1f);
+        [SerializeField] protected Vector2 destinationYOffset = new Vector2(0, .1f);
 
         private float SqrAttackRange => attackRange * attackRange;
         private float DelayBetweenAttacks => 1 / attackSpeed;
@@ -27,7 +29,7 @@ namespace LD55.Game
 
             if (self.IsNextAttackReady())
             {
-                target.TakeDamage(attackDamage);
+                ProjectileManager.Shoot(projectilePrefab, self.Position + originYOffset, target.Position + destinationYOffset);
                 self.SetDelayBeforeNextAttack(DelayBetweenAttacks);
             }
         }

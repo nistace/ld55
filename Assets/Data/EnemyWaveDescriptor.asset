@@ -227,7 +227,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
   finalInfiniteWave:
-    duration: 1
+    duration: 60
     waveEnemies:
     - characterPrefab: {fileID: 3805311355601562709, guid: c76f18ae1303efb43b73bd107f2f6f69, type: 3}
       spawnRateCurve:

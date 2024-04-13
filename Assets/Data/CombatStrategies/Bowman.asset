@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 963854bb6ffd4805be35bcf4623f48d2, type: 3}
-  m_Name: Torchman
+  m_Script: {fileID: 11500000, guid: 05485d1ec5ec4f4d96aba670e9be71df, type: 3}
+  m_Name: Bowman
   m_EditorClassIdentifier: 
-  attackRange: 0.5
-  attackDamage: 3
+  attackRange: 5
+  projectilePrefab: {fileID: 3398619392232237334, guid: 24f3180de01f9b54e9c4ea42fdfdf8b0, type: 3}
   attackSpeed: 1
+  originYOffset: {x: 0, y: 0.3}
+  destinationYOffset: {x: 0, y: 0.2}
