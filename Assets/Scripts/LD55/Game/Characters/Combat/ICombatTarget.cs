@@ -4,7 +4,8 @@ using UnityEngine.Events;
 namespace LD55.Game {
 	public interface ICombatTarget {
 		Vector2 Position { get; }
-		void TakeDamage(int damage);
+		bool IsDead { get; }
 		UnityEvent OnDied { get; }
+		void TakeDamage(int damage);
 	}
 }

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05485d1ec5ec4f4d96aba670e9be71df, type: 3}
   m_Name: Bowman
   m_EditorClassIdentifier: 
-  attackRange: 5
+  attackRange: 4
   projectilePrefab: {fileID: 3398619392232237334, guid: 24f3180de01f9b54e9c4ea42fdfdf8b0, type: 3}
-  attackSpeed: 1
-  originYOffset: {x: 0, y: 0.3}
-  destinationYOffset: {x: 0, y: 0.2}
+  attackSpeed: 0.4
+  originOffset: {x: 0, y: 0.1}
+  destinationOffset: {x: 0, y: 0.1}
+  targetTeam: 0
