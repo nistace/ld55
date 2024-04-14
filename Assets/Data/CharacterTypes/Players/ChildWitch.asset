@@ -16,6 +16,10 @@ MonoBehaviour:
   team: 0
   displayName: 
   role: 
-  maxHealth: 1
-  speed: 1.5
+  maxHealth: 50
+  speed: 1.6
   armor: 0
+  damagedClip:
+  - {fileID: 8300000, guid: 1b0bc55d9cee65647a5b5ce2e9b178f1, type: 3}
+  deadClip:
+  - {fileID: 8300000, guid: 565ec9a1fc6728144ab08f9af5adb9e7, type: 3}

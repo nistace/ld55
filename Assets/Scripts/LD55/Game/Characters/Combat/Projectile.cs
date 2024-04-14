@@ -17,6 +17,7 @@ namespace LD55.Game {
 		}
 
 		public void Shoot(Vector2 origin, Vector2 destination, Team targetTeam, float destinationOffsetY) {
+			GameAudio.PlaySfx(type.ShotClip, origin);
 			Origin = origin;
 			Destination = destination;
 			TargetTeam = targetTeam;

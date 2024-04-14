@@ -134,6 +134,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 90ccd47484d8f2745b85debfba29cbed, type: 2}
   summonLocation: {fileID: 4638356852972550529}
   currentRecipeSummoningRenderer: {fileID: 1743853172000001334}
+  clips:
+  - {fileID: 8300000, guid: 495b121f2e437904a9d8541dfa1ce6c5, type: 3}
+  - {fileID: 8300000, guid: f021267931da37545bd83405e5433f4d, type: 3}
+  - {fileID: 8300000, guid: b8c1e77ea3d41544da6dbb42c55e3055, type: 3}
+  - {fileID: 8300000, guid: 3ad840d10df6d2943a6691e709f3b888, type: 3}
+  - {fileID: 8300000, guid: 88294aff36742004e9cd9337fe6e8bee, type: 3}
+  - {fileID: 8300000, guid: f13a52a8cb3906441ba20705845de496, type: 3}
+  - {fileID: 8300000, guid: 5938f24d323634349a86706450b8bd11, type: 3}
+  - {fileID: 8300000, guid: 72d934b5edfb32a41954cc8d46271238, type: 3}
 --- !u!114 &888810301112417135
 MonoBehaviour:
   m_ObjectHideFlags: 0

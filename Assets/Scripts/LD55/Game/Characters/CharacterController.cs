@@ -33,9 +33,11 @@ namespace LD55.Game {
 		public void TakeDamage(int damage) {
 			if (damage <= type.Armor) return;
 			if (CurrentHealth <= 0) return;
+			GameAudio.PlaySfx(type.RandomDamagedClip, Position);
 			CurrentHealth = Mathf.Max(CurrentHealth - (damage - type.Armor), 0);
 			OnTookDamage.Invoke();
 			if (CurrentHealth == 0) {
+				GameAudio.PlaySfx(type.RandomDeadClip, Position);
 				OnDied.Invoke();
 				OnAnyCharacterDied.Invoke(this);
 			}

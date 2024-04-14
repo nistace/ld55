@@ -16,21 +16,28 @@ namespace LD55.Game {
 		private MagicStone CurrentMagicStone { get; set; }
 		public Vector2 CurrentMagicStonePosition => CurrentMagicStone.Position;
 		public Vector2 CurrentInteractablePosition => CurrentMagicStone.Position;
+		private bool NextMagicSpawnAllowed { get; set; }
 		public float InteractionProgress { get; private set; }
 
-		private void Start() => SpawnFirstMagicStone();
-
-		private void SpawnFirstMagicStone() => SpawnNextMagicStone(transform.position);
-
-		private void SpawnNextMagicStone(Vector2 position) {
-			CurrentMagicStone = Instantiate(prefab, position, Quaternion.identity, transform);
-		}
+		public void SpawnFirstMagicStone() => SpawnNextMagicStone();
 
 		public bool CanPlayerMoveToStone() {
 			if (!CurrentMagicStone) return false;
 			if (!CurrentMagicStone.CanInteract) return false;
 			if (CharacterManager.Instance.Player.CharacterController.IsDead) return false;
 			return true;
+		}
+
+		public void SetNextMagicSpawnAllowed(bool allowed) {
+			NextMagicSpawnAllowed = allowed;
+			if (allowed && (!CurrentMagicStone || CurrentMagicStone.Consumed)) {
+				SpawnNextMagicStone();
+			}
+		}
+
+		private void SpawnNextMagicStone() {
+			var spawnOffset = Vector2.right.Rotate(Random.Range(0, 360)) * spawnDistanceToPlayer[CharacterManager.Instance.Player.Summoner.Level.Clamp(spawnDistanceToPlayer)];
+			CurrentMagicStone = Instantiate(prefab, CharacterManager.Instance.Player.Position + spawnOffset, Quaternion.identity, transform);
 		}
 
 		public bool CanPlayerInteract() {
@@ -48,9 +55,8 @@ namespace LD55.Game {
 			if (Mathf.Approximately(InteractionProgress, 1)) {
 				CharacterManager.Instance.Player.LevelUp();
 				CurrentMagicStone.Consume();
-				if (!CharacterManager.Instance.Player.Summoner.IsMaxLevel) {
-					var spawnOffset = Vector2.right.Rotate(Random.Range(0, 360)) * spawnDistanceToPlayer[CharacterManager.Instance.Player.Summoner.Level.Clamp(spawnDistanceToPlayer)];
-					SpawnNextMagicStone(CharacterManager.Instance.Player.Position + spawnOffset);
+				if (NextMagicSpawnAllowed && !CharacterManager.Instance.Player.Summoner.IsMaxLevel) {
+					SpawnNextMagicStone();
 				}
 				InteractionProgress = 0;
 			}

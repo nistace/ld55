@@ -13,18 +13,30 @@ namespace LD55.Game {
 		[SerializeField] protected SummoningRecipe[] recipes;
 		[SerializeField] protected Transform summonLocation;
 		[SerializeField] protected SpriteRenderer currentRecipeSummoningRenderer;
+		[SerializeField] protected AudioClip[] clips;
 
 		public bool IsSummoning { get; private set; }
 		public int Level { get; set; }
-		public bool IsMaxLevel => Level >= recipes.Length;
+		public bool IsMaxLevel {
+			get { return Level >= recipes.Length; }
+		}
+
 		public int CurrentRecipeIndex { get; private set; }
-		public SummoningRecipe CurrentRecipe => recipes[CurrentRecipeIndex];
+		public SummoningRecipe CurrentRecipe {
+			get { return recipes[CurrentRecipeIndex]; }
+		}
+
 		public string CurrentSummoningLine { get; private set; }
 		public UnityEvent<SummoningRecipe, Vector2, float> OnRecipeSummoned { get; } = new UnityEvent<SummoningRecipe, Vector2, float>();
 		public UnityEvent OnSummoningStateChanged { get; } = new UnityEvent();
 		public UnityEvent OnSummoningCommandLineChanged { get; } = new UnityEvent();
-		public int UnlockedRecipesCount => Mathf.Min(Level, recipes.Length);
-		public bool IsCurrentRecipeLocked => CurrentSummoningLine.Length >= LineLengthToLockRecipe;
+		public int UnlockedRecipesCount {
+			get { return Mathf.Min(Level, recipes.Length); }
+		}
+
+		public bool IsCurrentRecipeLocked {
+			get { return CurrentSummoningLine.Length >= LineLengthToLockRecipe; }
+		}
 
 		private void Start() {
 			RefreshSummoning(false, true);
@@ -43,9 +55,13 @@ namespace LD55.Game {
 			InputManager.Controls.Player.Summon.SetAnyListenerOnce(HandleSummonInputChanged, enabled);
 		}
 
-		private void HandleGameEnvironmentChanged() => RefreshSummoning(IsSummoning, false);
+		private void HandleGameEnvironmentChanged() {
+			RefreshSummoning(IsSummoning, false);
+		}
 
-		private void HandleSummonInputChanged(InputAction.CallbackContext obj) => RefreshSummoning(obj.performed, false);
+		private void HandleSummonInputChanged(InputAction.CallbackContext obj) {
+			RefreshSummoning(obj.performed, false);
+		}
 
 		private void RefreshSummoning(bool summoning, bool forceRefresh) {
 			summoning &= UnlockedRecipesCount > 0;
@@ -78,7 +94,9 @@ namespace LD55.Game {
 			}
 		}
 
-		private int GetRecipeScore(string recipeLine) => CurrentSummoningLine.Where((t, i) => t == recipeLine[i]).Count();
+		private int GetRecipeScore(string recipeLine) {
+			return CurrentSummoningLine.Where((t, i) => t == recipeLine[i]).Count();
+		}
 
 		private void AppendSummoningCharacter(char additionalCharacter) {
 			if (!IsSummoning) return;
@@ -100,18 +118,53 @@ namespace LD55.Game {
 			OnSummoningCommandLineChanged.Invoke();
 		}
 
-		private void HandleSummonAPressed(InputAction.CallbackContext obj) => AppendSummoningCharacter('A');
-		private void HandleSummonBPressed(InputAction.CallbackContext obj) => AppendSummoningCharacter('B');
-		private void HandleSummonCPressed(InputAction.CallbackContext obj) => AppendSummoningCharacter('C');
-		private void HandleSummonDPressed(InputAction.CallbackContext obj) => AppendSummoningCharacter('D');
-		private void HandleSummonEPressed(InputAction.CallbackContext obj) => AppendSummoningCharacter('E');
-		private void HandleSummonFPressed(InputAction.CallbackContext obj) => AppendSummoningCharacter('F');
-		private void HandleSummonGPressed(InputAction.CallbackContext obj) => AppendSummoningCharacter('G');
-		private void HandleSummonHPressed(InputAction.CallbackContext obj) => AppendSummoningCharacter('H');
+		private void HandleSummonAPressed(InputAction.CallbackContext obj) {
+			GameAudio.PlaySfx(clips[0], transform.position);
+			AppendSummoningCharacter('A');
+		}
 
-		public int ClampRecipeIndex(int index) => Mathf.Clamp(index, 0, recipes.Length);
+		private void HandleSummonBPressed(InputAction.CallbackContext obj) {
+			GameAudio.PlaySfx(clips[1], transform.position);
+			AppendSummoningCharacter('B');
+		}
 
-		public SummoningRecipe GetRecipe(int recipeIndex) => recipes[recipeIndex];
+		private void HandleSummonCPressed(InputAction.CallbackContext obj) {
+			GameAudio.PlaySfx(clips[2], transform.position);
+			AppendSummoningCharacter('C');
+		}
+
+		private void HandleSummonDPressed(InputAction.CallbackContext obj) {
+			GameAudio.PlaySfx(clips[3], transform.position);
+			AppendSummoningCharacter('D');
+		}
+
+		private void HandleSummonEPressed(InputAction.CallbackContext obj) {
+			GameAudio.PlaySfx(clips[4], transform.position);
+			AppendSummoningCharacter('E');
+		}
+
+		private void HandleSummonFPressed(InputAction.CallbackContext obj) {
+			GameAudio.PlaySfx(clips[5], transform.position);
+			AppendSummoningCharacter('F');
+		}
+
+		private void HandleSummonGPressed(InputAction.CallbackContext obj) {
+			GameAudio.PlaySfx(clips[6], transform.position);
+			AppendSummoningCharacter('G');
+		}
+
+		private void HandleSummonHPressed(InputAction.CallbackContext obj) {
+			GameAudio.PlaySfx(clips[7], transform.position);
+			AppendSummoningCharacter('H');
+		}
+
+		public int ClampRecipeIndex(int index) {
+			return Mathf.Clamp(index, 0, recipes.Length);
+		}
+
+		public SummoningRecipe GetRecipe(int recipeIndex) {
+			return recipes[recipeIndex];
+		}
 
 		public void ChangeCurrentRecipeIndex(int index) {
 			if (IsCurrentRecipeLocked) return;

@@ -11,6 +11,7 @@ namespace LD55.Game {
 
 		public bool CanInteract => animator.GetCurrentAnimatorClipInfo(0).Any(t => t.clip == activeClip);
 		public Vector2 Position => transform.position;
+		public bool Consumed => animator.GetBool(consumedAnimParam);
 
 		private void Start() {
 			spriteRenderer.sortingOrder = -Mathf.FloorToInt(100 * transform.position.y);

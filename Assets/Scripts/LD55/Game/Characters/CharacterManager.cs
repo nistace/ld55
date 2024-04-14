@@ -9,7 +9,7 @@ namespace LD55.Game {
 		private static CharacterManager CachedInstance { get; set; }
 		public static CharacterManager Instance => CachedInstance ? CachedInstance : CachedInstance = FindObjectOfType<CharacterManager>(true);
 		public static UnityEvent OnPlayerDied => Instance.Player.CharacterController.OnDied;
-		public static UnityEvent<float> OnSummoningCompletedWithAccuracy { get; } = new UnityEvent<float>();
+		public static UnityEvent<SummoningRecipe, float> OnSummoningCompletedWithAccuracy { get; } = new UnityEvent<SummoningRecipe, float>();
 		public static UnityEvent OnEnemyKilled { get; } = new UnityEvent();
 
 		[SerializeField] protected EnemyWaveDescriptor enemyWaveDescriptor;
@@ -17,7 +17,7 @@ namespace LD55.Game {
 
 		public PlayerController Player => player;
 		private int NextAiToRefresh { get; set; }
-		private int CurrentWaveIndex { get; set; }
+		private int CurrentWaveIndex { get; set; } = -1;
 		public float PlayingTime { get; private set; }
 		private float CurrentWaveStartTime { get; set; }
 		private float CurrentWaveTime => Time.time - CurrentWaveStartTime;
@@ -33,8 +33,6 @@ namespace LD55.Game {
 
 			player.Summoner.OnRecipeSummoned.AddListenerOnce(HandleRecipeSummoned);
 
-			CurrentWaveIndex = 0;
-			CurrentWaveStartTime = Time.time;
 		}
 
 		private void OnEnable() {
@@ -49,6 +47,11 @@ namespace LD55.Game {
 			CombatGlobalParameters.UnsubscribeTarget(deadCharacter);
 			AllCharacters.RemoveWhere(t => t.CharacterController == deadCharacter);
 			if (deadCharacter.Team == Team.Enemy) OnEnemyKilled.Invoke();
+		}
+
+		public void StartFirstWave() {
+			CurrentWaveStartTime = Time.time;
+			CurrentWaveIndex = 0;
 		}
 
 		public void Update() {
@@ -66,6 +69,7 @@ namespace LD55.Game {
 		}
 
 		private void UpdateEnemyWave() {
+			if (CurrentWaveIndex == -1) return;
 			if (player.CharacterController.IsDead) return;
 			if (!GameEnvironmentManager.Instance.SpawningAllowed) return;
 
@@ -90,7 +94,7 @@ namespace LD55.Game {
 
 		private void HandleRecipeSummoned(SummoningRecipe summonedRecipe, Vector2 position, float accuracy) {
 			Spawn(summonedRecipe.SummoningsPrefabs, position);
-			OnSummoningCompletedWithAccuracy.Invoke(accuracy);
+			OnSummoningCompletedWithAccuracy.Invoke(summonedRecipe, accuracy);
 		}
 
 		private void Spawn(IReadOnlyList<AiCharacter> prefabs, Vector2 position) {

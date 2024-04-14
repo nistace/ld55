@@ -48,3 +48,4 @@ MonoBehaviour:
     m_RotationOrder: 4
   damage: 3
   rightToForward: 1
+  shotClip: {fileID: 8300000, guid: dc2bd8057949a194ca25691d2c4d198b, type: 3}

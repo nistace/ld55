@@ -16,6 +16,10 @@ MonoBehaviour:
   team: 0
   displayName: Portal
   role: A Passage to Hell
-  maxHealth: 400
+  maxHealth: 200
   speed: 0
   armor: 2
+  damagedClip:
+  - {fileID: 8300000, guid: 1b0bc55d9cee65647a5b5ce2e9b178f1, type: 3}
+  deadClip:
+  - {fileID: 8300000, guid: 1b0bc55d9cee65647a5b5ce2e9b178f1, type: 3}

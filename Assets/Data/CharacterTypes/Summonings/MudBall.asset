@@ -19,3 +19,7 @@ MonoBehaviour:
   maxHealth: 5
   speed: 1
   armor: 0
+  damagedClip:
+  - {fileID: 8300000, guid: 1b0bc55d9cee65647a5b5ce2e9b178f1, type: 3}
+  deadClip:
+  - {fileID: 8300000, guid: 570b98142408c144c849b33db865b907, type: 3}
