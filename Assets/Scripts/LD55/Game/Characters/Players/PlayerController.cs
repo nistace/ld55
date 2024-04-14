@@ -21,5 +21,9 @@ namespace LD55.Game {
 
 		public Vector2 Position => CharacterController.Position;
 		public void TakeDamage(int damage) => characterController.TakeDamage(damage);
+
+		public void LevelUp() {
+			Summoner.Level++;
+		}
 	}
 }

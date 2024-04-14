@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: baa7ececef270b6458c768c9454a88ea
+guid: a0239221aceacb44ea0d2b16dc108428
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -75,7 +75,7 @@ ScriptedImporter:
     importHiddenLayers: 1
     layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -88,7 +88,7 @@ ScriptedImporter:
     importHiddenLayers: 1
     layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638487029268025615
+  platformSettingsDirtyTick: 638487015529366409
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: MudballGroup
+  - name: Layer 1
     originalName: 
-    pivot: {x: 0.5714286, y: 0.5714286}
+    pivot: {x: 0.3, y: -1.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 21
-      height: 7
-    spriteID: a7133c6eb8f6b374aa0a188374d56565
+      width: 10
+      height: 16
+    spriteID: de6332954d584244b95680a85d982f3f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,20 +144,20 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1853988116
-    name: MudballGroup
+    guid: 1317222744
+    name: Layer 1
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: MudballGroup
+    - name: Layer 1
       frameIndex: 0
       cellRect:
-        x: 20
-        y: 28
-        width: 21
-        height: 7
-      spriteId: a7133c6eb8f6b374aa0a188374d56565
+        x: 29
+        y: 24
+        width: 10
+        height: 16
+      spriteId: de6332954d584244b95680a85d982f3f
     linkedCells: []
     parentIndex: -1
   platformSettings:

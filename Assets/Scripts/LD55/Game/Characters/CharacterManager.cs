@@ -5,6 +5,11 @@ using UnityEngine.Events;
 
 namespace LD55.Game {
 	public class CharacterManager : MonoBehaviour {
+		
+		private static CharacterManager CachedInstance { get; set; }
+		public static CharacterManager Instance => CachedInstance ? CachedInstance : CachedInstance = FindObjectOfType<CharacterManager>(true);
+		
+		
 		[SerializeField] protected EnemyWaveDescriptor enemyWaveDescriptor;
 		[SerializeField] protected PlayerController player;
 

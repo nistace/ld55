@@ -15,7 +15,7 @@ namespace LD55.Game {
 		[SerializeField] protected SpriteRenderer currentRecipeSummoningRenderer;
 
 		public bool IsSummoning { get; private set; }
-		private int Level { get; set; } = 5;
+		public int Level { get; set; }
 		public int CurrentRecipeIndex { get; private set; }
 		public SummoningRecipe CurrentRecipe => recipes[CurrentRecipeIndex];
 		public string CurrentSummoningLine { get; private set; }
@@ -44,6 +44,7 @@ namespace LD55.Game {
 		private void HandleSummonInputChanged(InputAction.CallbackContext obj) => RefreshSummoning(obj.performed, false);
 
 		private void RefreshSummoning(bool summoning, bool forceRefresh) {
+			summoning &= UnlockedRecipesCount > 0;
 			if (IsSummoning == summoning && !forceRefresh) return;
 			IsSummoning = summoning;
 			CurrentSummoningLine = string.Empty;

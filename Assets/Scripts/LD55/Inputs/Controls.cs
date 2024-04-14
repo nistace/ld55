@@ -136,6 +136,15 @@ namespace LD55.Inputs
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""564968c1-79b0-406c-b1f0-bd01e5bad81a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -446,6 +455,28 @@ namespace LD55.Inputs
                     ""action"": ""SummonPagePrevious"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""25f42d83-fe8f-4ee3-bded-bad8e15e467c"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5f2aa382-d58d-42bf-8f87-bd95659821a2"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -466,6 +497,7 @@ namespace LD55.Inputs
             m_Player_SummonH = m_Player.FindAction("SummonH", throwIfNotFound: true);
             m_Player_SummonPageNext = m_Player.FindAction("SummonPageNext", throwIfNotFound: true);
             m_Player_SummonPagePrevious = m_Player.FindAction("SummonPagePrevious", throwIfNotFound: true);
+            m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -539,6 +571,7 @@ namespace LD55.Inputs
         private readonly InputAction m_Player_SummonH;
         private readonly InputAction m_Player_SummonPageNext;
         private readonly InputAction m_Player_SummonPagePrevious;
+        private readonly InputAction m_Player_Interact;
         public struct PlayerActions
         {
             private @Controls m_Wrapper;
@@ -555,6 +588,7 @@ namespace LD55.Inputs
             public InputAction @SummonH => m_Wrapper.m_Player_SummonH;
             public InputAction @SummonPageNext => m_Wrapper.m_Player_SummonPageNext;
             public InputAction @SummonPagePrevious => m_Wrapper.m_Player_SummonPagePrevious;
+            public InputAction @Interact => m_Wrapper.m_Player_Interact;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -600,6 +634,9 @@ namespace LD55.Inputs
                 @SummonPagePrevious.started += instance.OnSummonPagePrevious;
                 @SummonPagePrevious.performed += instance.OnSummonPagePrevious;
                 @SummonPagePrevious.canceled += instance.OnSummonPagePrevious;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -640,6 +677,9 @@ namespace LD55.Inputs
                 @SummonPagePrevious.started -= instance.OnSummonPagePrevious;
                 @SummonPagePrevious.performed -= instance.OnSummonPagePrevious;
                 @SummonPagePrevious.canceled -= instance.OnSummonPagePrevious;
+                @Interact.started -= instance.OnInteract;
+                @Interact.performed -= instance.OnInteract;
+                @Interact.canceled -= instance.OnInteract;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -671,6 +711,7 @@ namespace LD55.Inputs
             void OnSummonH(InputAction.CallbackContext context);
             void OnSummonPageNext(InputAction.CallbackContext context);
             void OnSummonPagePrevious(InputAction.CallbackContext context);
+            void OnInteract(InputAction.CallbackContext context);
         }
     }
 }

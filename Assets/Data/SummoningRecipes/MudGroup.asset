@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e12bf614ea426daaffe55e8ee70601, type: 3}
   m_Name: MudGroup
   m_EditorClassIdentifier: 
-  summoningLine: ACACACAC
+  summoningLine: ACACAC
   summoningsPrefabs:
   - {fileID: 6548501338654174750, guid: 8483c097c1e668b4b9aeb5afa7543421, type: 3}
   - {fileID: 6548501338654174750, guid: 8483c097c1e668b4b9aeb5afa7543421, type: 3}
