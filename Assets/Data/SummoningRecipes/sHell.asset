@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: sHell
   m_EditorClassIdentifier: 
   summoningLine: DDABEFFDD
-  summoningPrefab: {fileID: 6548501338654174750, guid: 308b6f9e8d1bd79489980f3d0a4e68e0, type: 3}
+  summoningsPrefabs:
+  - {fileID: 6548501338654174750, guid: 308b6f9e8d1bd79489980f3d0a4e68e0, type: 3}
   summoningSprite: {fileID: -2491196178007528588, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
+  overrideDisplayName: 
+  overrideRole: 

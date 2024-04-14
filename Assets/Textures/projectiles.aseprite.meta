@@ -141,6 +141,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 20}
+  - name: FireBall
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 20
+      y: 4
+      width: 4
+      height: 4
+    spriteID: a7f45dd47e2127e4eb636f78ba41f409
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 20, y: 4}
   - name: VoidBall
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -152,7 +172,7 @@ ScriptedImporter:
       y: 4
       width: 8
       height: 8
-    spriteID: 6814353c2b410214a886ee980615cdee
+    spriteID: 17503e76bf6a3a64ea11a01d5c812f13
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -181,9 +201,26 @@ ScriptedImporter:
     linkedCells: []
     parentIndex: -1
   - layerIndex: 1
-    guid: -1082962330
-    name: VoidBall
+    guid: -522276394
+    name: FireBall
     layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: FireBall
+      frameIndex: 0
+      cellRect:
+        x: 14
+        y: 14
+        width: 4
+        height: 4
+      spriteId: a7f45dd47e2127e4eb636f78ba41f409
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: -1082962331
+    name: VoidBall
+    layerFlags: 2
     layerType: 0
     blendMode: 0
     cells:
@@ -194,7 +231,7 @@ ScriptedImporter:
         y: 12
         width: 8
         height: 8
-      spriteId: 6814353c2b410214a886ee980615cdee
+      spriteId: 17503e76bf6a3a64ea11a01d5c812f13
     linkedCells: []
     parentIndex: -1
   platformSettings:

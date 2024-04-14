@@ -3,131 +3,100 @@ using NiUtils.Extensions;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace LD55.Game
-{
-    public class CharacterManager : MonoBehaviour
-    {
-        [SerializeField] protected EnemyWaveDescriptor enemyWaveDescriptor;
-        [SerializeField] protected PlayerController player;
+namespace LD55.Game {
+	public class CharacterManager : MonoBehaviour {
+		[SerializeField] protected EnemyWaveDescriptor enemyWaveDescriptor;
+		[SerializeField] protected PlayerController player;
 
-        public PlayerController Player => player;
-        private int NextMonsterToUpdate { get; set; }
-        private int NextSummoningToUpdate { get; set; }
-        private int CurrentWaveIndex { get; set; }
-        private float CurrentWaveStartTime { get; set; }
-        private float CurrentWaveTime => Time.time - CurrentWaveStartTime;
-        private EnemyWaveDescriptor.Wave CurrentWave => enemyWaveDescriptor.GetWave(CurrentWaveIndex);
-        private int CurrentWaveCoefficient => enemyWaveDescriptor.GetWaveCoefficient(CurrentWaveIndex);
-        private Dictionary<Team, List<AiCharacter>> CharactersPerTeam { get; } = new Dictionary<Team, List<AiCharacter>>();
-        private Dictionary<AiCharacter, float> EnemySpawnProgress { get; } = new Dictionary<AiCharacter, float>();
+		public PlayerController Player => player;
+		private int NextAiToRefresh { get; set; }
+		private int CurrentWaveIndex { get; set; }
+		private float CurrentWaveStartTime { get; set; }
+		private float CurrentWaveTime => Time.time - CurrentWaveStartTime;
+		private EnemyWaveDescriptor.Wave CurrentWave => enemyWaveDescriptor.GetWave(CurrentWaveIndex);
+		private int CurrentWaveCoefficient => enemyWaveDescriptor.GetWaveCoefficient(CurrentWaveIndex);
+		private List<AiCharacter> AllCharacters { get; } = new List<AiCharacter>();
+		private Dictionary<AiCharacter, float> EnemySpawnProgress { get; } = new Dictionary<AiCharacter, float>();
 
-        public UnityEvent OnPlayerDied => player.CharacterController.OnDied;
+		public UnityEvent OnPlayerDied => player.CharacterController.OnDied;
 
-        public void Start()
-        {
-            CharactersPerTeam.Add(Team.Player, new List<AiCharacter>());
-            CharactersPerTeam.Add(Team.Enemy, new List<AiCharacter>());
-            CombatGlobalParameters.Clear();
-            CombatGlobalParameters.SubscribeTargetOfTeam(Team.Player, player.CharacterController);
-            enemyWaveDescriptor.AllDistinctSpawnableEnemies().ForEach(t => EnemySpawnProgress.Add(t, 0));
+		public void Start() {
+			CombatGlobalParameters.Clear();
+			CombatGlobalParameters.SubscribeTarget(player.CharacterController);
+			enemyWaveDescriptor.AllDistinctSpawnableEnemies().ForEach(t => EnemySpawnProgress.Add(t, 0));
 
-            player.Summoner.OnRecipeSummoned.AddListenerOnce(HandleRecipeSummoned);
+			player.Summoner.OnRecipeSummoned.AddListenerOnce(HandleRecipeSummoned);
 
-            CurrentWaveIndex = 0;
-            CurrentWaveStartTime = Time.time;
-        }
+			CurrentWaveIndex = 0;
+			CurrentWaveStartTime = Time.time;
+		}
 
-        private void OnEnable()
-        {
-            CharacterController.OnAnyCharacterDied.AddListenerOnce(HandleAnyCharacterDied);
-        }
+		private void OnEnable() {
+			CharacterController.OnAnyCharacterDied.AddListenerOnce(HandleAnyCharacterDied);
+		}
 
-        private void OnDisable()
-        {
-            CharacterController.OnAnyCharacterDied.RemoveListener(HandleAnyCharacterDied);
-        }
+		private void OnDisable() {
+			CharacterController.OnAnyCharacterDied.RemoveListener(HandleAnyCharacterDied);
+		}
 
-        private void HandleAnyCharacterDied(CharacterController deadCharacter)
-        {
-            CombatGlobalParameters.UnsubscribeTarget(deadCharacter);
-            foreach (var characterSet in CharactersPerTeam.Values)
-            {
-                characterSet.RemoveWhere(t => t.CharacterController == deadCharacter);
-            }
-            // TODO Handle dying in a proper way
-        }
+		private void HandleAnyCharacterDied(CharacterController deadCharacter) {
+			CombatGlobalParameters.UnsubscribeTarget(deadCharacter);
+			AllCharacters.RemoveWhere(t => t.CharacterController == deadCharacter);
+			// TODO Handle dying in a proper way
+		}
 
-        public void Update()
-        {
-            UpdateEnemyWave();
-            UpdateNextEnemy();
-            UpdateNextSummoning();
-        }
+		public void Update() {
+			UpdateEnemyWave();
+			UpdateNextAiToRefresh();
+		}
 
-        private void UpdateEnemyWave()
-        {
-            if (player.CharacterController.IsDead) return;
+		private void UpdateNextAiToRefresh() {
+			if (AllCharacters.Count == 0) return;
+			NextAiToRefresh %= AllCharacters.Count;
 
-            if (CurrentWaveTime > CurrentWave.Duration)
-            {
-                CurrentWaveIndex++;
-                CurrentWaveStartTime = Time.time;
-            }
+			AllCharacters[NextAiToRefresh].IsAllowedToChangeTarget = true;
 
-            if (CurrentWave.Duration > 0)
-            {
-                foreach (var waveEnemy in CurrentWave.WaveEnemies)
-                {
-                    var enemyPrefab = waveEnemy.CharacterPrefab;
-                    EnemySpawnProgress[enemyPrefab] += CurrentWaveCoefficient * waveEnemy.SpawnRateCurve.Evaluate(CurrentWaveTime / CurrentWave.Duration) * Time.deltaTime;
-                    while (EnemySpawnProgress[enemyPrefab] > 1)
-                    {
-                        SpawnEnemy(enemyPrefab);
-                        EnemySpawnProgress[enemyPrefab]--;
-                    }
-                }
-            }
-        }
+			NextAiToRefresh++;
+		}
 
-        private void UpdateNextSummoning() => NextSummoningToUpdate = UpdateAiCharacter(CharactersPerTeam[Team.Player], NextSummoningToUpdate, CharactersPerTeam[Team.Enemy], null);
-        private void UpdateNextEnemy() => NextMonsterToUpdate = UpdateAiCharacter(CharactersPerTeam[Team.Enemy], NextMonsterToUpdate, CharactersPerTeam[Team.Player], player);
+		private void UpdateEnemyWave() {
+			if (player.CharacterController.IsDead) return;
 
-        private static int UpdateAiCharacter(IReadOnlyList<AiCharacter> characters, int currentCharacterIndex, IEnumerable<ICombatTarget> validTargets, ICharacterBrain playerAsValidTarget)
-        {
-            if (characters.Count < 1) return 0;
-            currentCharacterIndex %= characters.Count;
+			if (CurrentWaveTime > CurrentWave.Duration) {
+				CurrentWaveIndex++;
+				CurrentWaveStartTime = Time.time;
+			}
 
-            var currentCharacter = characters[currentCharacterIndex];
-            currentCharacter.ChangeTarget(default);
-            var bestTargetCost = float.MaxValue;
+			if (CurrentWave.Duration > 0) {
+				foreach (var waveEnemy in CurrentWave.WaveEnemies) {
+					var enemyPrefab = waveEnemy.CharacterPrefab;
+					EnemySpawnProgress[enemyPrefab] += CurrentWaveCoefficient * waveEnemy.SpawnRateCurve.Evaluate(CurrentWaveTime / CurrentWave.Duration) * Time.deltaTime;
+					while (EnemySpawnProgress[enemyPrefab] > 1) {
+						Spawn(enemyPrefab, player.Position + Vector2.right.Rotate(Random.Range(0, 360)) * enemyWaveDescriptor.SpawnDistance);
+						EnemySpawnProgress[enemyPrefab]--;
+					}
+				}
+			}
+		}
 
-            if (playerAsValidTarget != null)
-            {
-                currentCharacter.ChangeTarget(playerAsValidTarget.CharacterController);
-                bestTargetCost = (playerAsValidTarget.CharacterController.Position - currentCharacter.CharacterController.Position).sqrMagnitude;
-            }
+		private void HandleRecipeSummoned(SummoningRecipe summonedRecipe, Vector2 position) => Spawn(summonedRecipe.SummoningsPrefabs, position);
 
-            foreach (var target in validTargets)
-            {
-                var targetCost = (target.Position - currentCharacter.CharacterController.Position).sqrMagnitude;
-                if (bestTargetCost > targetCost)
-                {
-                    currentCharacter.ChangeTarget(target);
-                    bestTargetCost = targetCost;
-                }
-            }
+		private void Spawn(IReadOnlyList<AiCharacter> prefabs, Vector2 position) {
+			for (var index = 0; index < prefabs.Count; index++) {
+				var prefab = prefabs[index];
+				var offset = index switch {
+					0 => Vector2.zero,
+					< 7 => (Vector2)(Quaternion.Euler(0, 0, index * 60) * new Vector2(0, .2f)),
+					_ => Vector2.zero
+				};
+				Spawn(prefab, position + offset);
+			}
+		}
 
-            return currentCharacterIndex + 1;
-        }
-
-        private void HandleRecipeSummoned(SummoningRecipe summonedRecipe, Vector2 position) => Spawn(summonedRecipe.SummoningPrefab, position, Team.Player);
-        private void SpawnEnemy(AiCharacter enemyPrefab) => Spawn(enemyPrefab, player.Position + Vector2.right.Rotate(Random.Range(0, 360)) * enemyWaveDescriptor.SpawnDistance, Team.Enemy);
-
-        private void Spawn(AiCharacter prefab, Vector2 position, Team team)
-        {
-            var character = Instantiate(prefab, position, Quaternion.identity, transform);
-            CharactersPerTeam[team].Add(character);
-            CombatGlobalParameters.SubscribeTargetOfTeam(team, character);
-        }
-    }
+		private void Spawn(AiCharacter prefab, Vector2 position) {
+			var character = Instantiate(prefab, position, Quaternion.identity, transform);
+			AllCharacters.Add(character);
+			CombatGlobalParameters.SubscribeTarget(character.CharacterController);
+		}
+	}
 }

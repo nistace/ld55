@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ed35be1f864de6af1086f970eaf375, type: 3}
   m_Name: Torchman
   m_EditorClassIdentifier: 
+  sprite: {fileID: -1297407403079137173, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
+  team: 1
   displayName: Torch Dude
   role: Melee
   maxHealth: 10

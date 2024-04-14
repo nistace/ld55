@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ed35be1f864de6af1086f970eaf375, type: 3}
   m_Name: ChildWitch
   m_EditorClassIdentifier: 
+  sprite: {fileID: -6512364201668910417, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
+  team: 0
   displayName: 
   role: 
   maxHealth: 50

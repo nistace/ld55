@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4e12bf614ea426daaffe55e8ee70601, type: 3}
-  m_Name: MudBall
+  m_Name: MudGroup
   m_EditorClassIdentifier: 
-  summoningLine: FGFG
+  summoningLine: ACACACAC
   summoningsPrefabs:
   - {fileID: 6548501338654174750, guid: 8483c097c1e668b4b9aeb5afa7543421, type: 3}
+  - {fileID: 6548501338654174750, guid: 8483c097c1e668b4b9aeb5afa7543421, type: 3}
+  - {fileID: 6548501338654174750, guid: 8483c097c1e668b4b9aeb5afa7543421, type: 3}
   summoningSprite: {fileID: -6500171216162601342, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
-  overrideDisplayName: 
-  overrideRole: 
+  overrideDisplayName: Mud Group
+  overrideRole: More Swarm

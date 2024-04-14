@@ -39,7 +39,7 @@ namespace LD55.Game {
 			Progress += Time.deltaTime * type.Speed / OriginToDestinationMagnitude;
 			spriteRenderer.enabled = true;
 			RefreshPosition();
-			if (GetYOffset(Progress) < .1f && CombatGlobalParameters.TryGetTarget(TargetTeam, transform.position - DestinationToTargetOffset, out var hitTarget)) {
+			if (GetYOffset(Progress) < .1f && CombatGlobalParameters.TryGetClosest(TargetTeam, transform.position - DestinationToTargetOffset, .5f, out var hitTarget)) {
 				hitTarget.TakeDamage(type.Damage);
 				gameObject.SetActive(false);
 			}

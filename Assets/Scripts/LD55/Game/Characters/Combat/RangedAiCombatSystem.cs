@@ -8,27 +8,27 @@ namespace LD55.Game {
 		[SerializeField] protected float attackSpeed = 1;
 		[SerializeField] protected Vector2 originOffset = new Vector2(0, .1f);
 		[SerializeField] protected Vector2 destinationOffset = new Vector2(0, .1f);
-		[SerializeField] protected Team targetTeam = Team.Player;
 
 		private float SqrAttackRange => attackRange * attackRange;
 		private float DelayBetweenAttacks => 1 / attackSpeed;
 
-		public override void Solve(ICombatant self, ICombatTarget target) {
-			if (self == null) return;
-			if (target == null) return;
-			if (target.IsDead) return;
+		public override void Solve(ICombatant self) {
+			if (self?.Target == null) return;
+			if (self.Target.IsDead) return;
 
-			var selfToTarget = target.Position - self.Position;
+			var selfToTarget = self.Target.Position - self.Position;
 
 			if (selfToTarget.sqrMagnitude > SqrAttackRange) {
-				self.Move(target.Position - self.Position);
+				self.Move(self.Target.Position - self.Position);
 				return;
 			}
 
 			if (self.IsNextAttackReady()) {
-				ProjectileManager.Shoot(projectilePrefab, self.Position + originOffset, target.Position + destinationOffset, targetTeam, destinationOffset.y);
+				ProjectileManager.Shoot(projectilePrefab, self.Position + originOffset, self.Target.Position + destinationOffset, self.Team.Opponent(), destinationOffset.y);
 				self.SetDelayBeforeNextAttack(DelayBetweenAttacks);
 			}
 		}
+
+		public override ICombatTarget FindTarget(ICombatant self) => GetClosestOpponent(self);
 	}
 }

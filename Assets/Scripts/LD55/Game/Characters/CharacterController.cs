@@ -9,6 +9,7 @@ namespace LD55.Game {
 		public Vector2 Position => transform.position;
 		private int CurrentHealth { get; set; }
 		public bool IsDead => CurrentHealth <= 0;
+		public Team Team => type.Team;
 		private Vector2 LastMovement { get; set; }
 		public Vector2 LastMovementNormalized { get; private set; }
 		private bool movedThisFrame { get; set; }

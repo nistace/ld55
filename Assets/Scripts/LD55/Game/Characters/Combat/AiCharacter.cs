@@ -12,12 +12,18 @@ namespace LD55.Game {
 		public Vector2 Position => characterController.Position;
 		public bool IsDead => characterController.IsDead;
 		private float NextAllowedAttackTime { get; set; }
-		private ICombatTarget Target { get; set; }
+		public bool IsAllowedToChangeTarget { get; set; }
+		public Team Team => characterController.Type.Team;
+		public ICombatTarget Target { get; private set; }
 		public UnityEvent OnDied => characterController.OnDied;
 
 		private void Update() {
 			if (CharacterController.IsDead) return;
-			combatStrategy.Solve(this, Target);
+			if (IsAllowedToChangeTarget) {
+				ChangeTarget(combatStrategy.FindTarget(this));
+				IsAllowedToChangeTarget = false;
+			}
+			combatStrategy.Solve(this);
 		}
 
 		public void Move(Vector2 targetPosition) => characterController.Move(targetPosition);

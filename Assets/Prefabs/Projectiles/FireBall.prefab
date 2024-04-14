@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1679590226953059188}
   - component: {fileID: 3398619392232237334}
   m_Layer: 0
-  m_Name: Arrow
+  m_Name: FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f94f054626d4ae89fc32a20227192e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: {fileID: 11400000, guid: 5cb351abbb8751b4b87322a4904ef102, type: 2}
+  type: {fileID: 11400000, guid: 1421940ee149dd044862276a8036aa73, type: 2}
 --- !u!1001 &1987881748903892130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: projectiles
       objectReference: {fileID: 0}
-    - target: {fileID: 3081730747291495978, guid: ff6d755b46c690c47b90940cfa1e8e1b, type: 3}
+    - target: {fileID: -1102352246517375896, guid: ff6d755b46c690c47b90940cfa1e8e1b, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

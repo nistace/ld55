@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ed35be1f864de6af1086f970eaf375, type: 3}
   m_Name: Soldier
   m_EditorClassIdentifier: 
+  sprite: {fileID: -4778249390685199103, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
+  team: 1
   displayName: Soldier
   role: Melee Tank
   maxHealth: 20

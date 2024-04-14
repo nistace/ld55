@@ -7,15 +7,16 @@ namespace LD55.Game {
 
 		private float SqrTankRange => tankRange * tankRange;
 
-		public override void Solve(ICombatant self, ICombatTarget target) {
-			if (self == null) return;
-			if (target == null) return;
+		public override void Solve(ICombatant self) {
+			if (self?.Target == null) return;
 
-			var selfToTarget = target.Position - self.Position;
+			var selfToTarget = self.Target.Position - self.Position;
 
 			if (selfToTarget.sqrMagnitude > SqrTankRange) {
-				self.Move(target.Position - self.Position);
+				self.Move(self.Target.Position - self.Position);
 			}
 		}
+
+		public override ICombatTarget FindTarget(ICombatant self) => GetClosestOpponent(self);
 	}
 }

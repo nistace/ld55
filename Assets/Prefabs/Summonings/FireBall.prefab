@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 8495536015341424698}
-  combatStrategy: {fileID: 11400000, guid: 5e940dad461622946aa2301c8507ebb6, type: 2}
+  combatStrategy: {fileID: 11400000, guid: f0daf47f9e346c8439b3d5e3f837a7fc, type: 2}
 --- !u!114 &8495536015341424698
 MonoBehaviour:
   m_ObjectHideFlags: 0
