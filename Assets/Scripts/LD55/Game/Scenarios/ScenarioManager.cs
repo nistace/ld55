@@ -71,6 +71,7 @@ namespace LD55.Game {
 
 		private IEnumerator PlayLine(ScenarioDescriptor.ClipAndText line) {
 			var source = AudioManager.Voices.Play(line.Clip);
+			source.priority = 2;
 			ui.ScenarioText.Show(line.Text);
 			yield return null;
 			while (source.isPlaying) yield return null;
