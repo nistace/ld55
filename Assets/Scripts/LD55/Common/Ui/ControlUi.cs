@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SummoningLineControlUi : MonoBehaviour {
+public class ControlUi : MonoBehaviour {
 	[SerializeField] protected Image control;
 	[SerializeField] protected TMP_Text keyText;
 	[SerializeField] protected Image missImage;

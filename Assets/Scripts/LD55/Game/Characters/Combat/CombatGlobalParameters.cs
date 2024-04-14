@@ -24,7 +24,7 @@ namespace LD55.Game {
 
 			var closest = targetsPerTeam[withinTeam].Select(t => (t, (t.Position - position).sqrMagnitude)).OrderBy(t => t.sqrMagnitude).FirstOrDefault();
 			foundTarget = closest.t;
-			return closest.sqrMagnitude < allowedRadius * allowedRadius;
+			return foundTarget != null && closest.sqrMagnitude < allowedRadius * allowedRadius;
 		}
 
 		public static IReadOnlyList<ICombatTarget> GetAllInRange(Team withinTeam, Vector2 position, float radius) {

@@ -60,7 +60,7 @@ namespace LD55.Game {
 					default: throw new ArgumentOutOfRangeException();
 				}
 
-				StartCoroutine(PlayLine(scenarioStep.Line));
+				yield return StartCoroutine(PlayLine(scenarioStep.Line));
 				yield return new WaitForSeconds(0.5f);
 			}
 

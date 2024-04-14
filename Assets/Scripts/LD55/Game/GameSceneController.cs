@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 
 namespace LD55.Game {
 	public class GameSceneController : MonoBehaviour {
-		public static bool SkipIntro { get; set; } = true;
+		public static bool SkipIntro { get; set; } = false;
 
-		[SerializeField] protected ControlsSpriteLibrary controlsSpriteLibrary;
 		[SerializeField] protected CharacterManager characterManager;
 		[SerializeField] protected ScenarioManager scenarioManager;
 		[SerializeField] protected GameUi ui;
@@ -17,7 +16,6 @@ namespace LD55.Game {
 			ProjectileManager.Clear();
 			ui.Recipe.Init(characterManager.Player.Summoner);
 			ui.GameOver.OnQuitButtonClicked.AddListenerOnce(HandleQuitButtonClicked);
-			InputManager.ControllerSprites = controlsSpriteLibrary.PSSprites;
 			if (SkipIntro) scenarioManager.SkipIntro();
 			else scenarioManager.StartWithIntro();
 		}

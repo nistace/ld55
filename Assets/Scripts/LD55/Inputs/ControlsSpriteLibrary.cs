@@ -7,9 +7,10 @@ namespace LD55.Inputs {
 		[Serializable] public class ControllerSprites {
 			[SerializeField] protected Sprite[] sprites;
 			[SerializeField] protected bool displayKey;
+			[SerializeField] protected string name;
 
 			public Sprite this[char control] => sprites[control - 'A'];
-
+			public string Name => name;
 			public bool DisplayKey => displayKey;
 		}
 

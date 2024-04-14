@@ -23,6 +23,7 @@ MonoBehaviour:
     - {fileID: -7430170386413576109, guid: c24d81935b63b884f897ad8ff2002ae7, type: 3}
     - {fileID: -7430170386413576109, guid: c24d81935b63b884f897ad8ff2002ae7, type: 3}
     displayKey: 1
+    name: Keyboard
   xboxSprites:
     sprites:
     - {fileID: -4340267356585682100, guid: c24d81935b63b884f897ad8ff2002ae7, type: 3}
@@ -34,6 +35,7 @@ MonoBehaviour:
     - {fileID: -3606362537849095752, guid: c24d81935b63b884f897ad8ff2002ae7, type: 3}
     - {fileID: 6604966165149189446, guid: c24d81935b63b884f897ad8ff2002ae7, type: 3}
     displayKey: 0
+    name: Xbox
   psSprites:
     sprites:
     - {fileID: -4340267356585682100, guid: c24d81935b63b884f897ad8ff2002ae7, type: 3}
@@ -45,3 +47,4 @@ MonoBehaviour:
     - {fileID: -5790674991492807762, guid: c24d81935b63b884f897ad8ff2002ae7, type: 3}
     - {fileID: 2973969894192083567, guid: c24d81935b63b884f897ad8ff2002ae7, type: 3}
     displayKey: 0
+    name: Playstation

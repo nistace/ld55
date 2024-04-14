@@ -11,7 +11,7 @@ public class SummoningRecipeUi : MonoBehaviour {
 	[SerializeField] protected Image icon;
 	[SerializeField] protected TMP_Text summoningName;
 	[SerializeField] protected TMP_Text summoningRole;
-	[SerializeField] protected SummoningLineControlUi[] controls;
+	[SerializeField] protected ControlUi[] controls;
 	[SerializeField] protected Color summoningControlActiveColor = Color.white;
 	[SerializeField] protected Color summoningControlInactiveColor = Color.white.With(a: .5f);
 	[SerializeField] protected TMP_Text pageText;
@@ -20,7 +20,7 @@ public class SummoningRecipeUi : MonoBehaviour {
 	private float TargetAlpha { get; set; }
 
 	private void Reset() {
-		controls = GetComponentsInChildren<SummoningLineControlUi>();
+		controls = GetComponentsInChildren<ControlUi>();
 	}
 
 	public void Init(Summoner summoner) {
