@@ -60,9 +60,7 @@ namespace LD55.Game {
 					default: throw new ArgumentOutOfRangeException();
 				}
 
-				var source = AudioManager.Voices.Play(scenarioStep.Line.Clip);
-				yield return null;
-				while (source.isPlaying) yield return null;
+				StartCoroutine(PlayLine(scenarioStep.Line));
 				yield return new WaitForSeconds(0.5f);
 			}
 
@@ -71,9 +69,17 @@ namespace LD55.Game {
 			CharacterManager.Instance.StartFirstWave();
 		}
 
+		private IEnumerator PlayLine(ScenarioDescriptor.ClipAndText line) {
+			var source = AudioManager.Voices.Play(line.Clip);
+			ui.ScenarioText.Show(line.Text);
+			yield return null;
+			while (source.isPlaying) yield return null;
+			ui.ScenarioText.Hide();
+		}
+
 		public void SkipIntro() {
+			StartCoroutine(PlayLine(scenarioDescriptor.IntroSkippedLine));
 			GameEnvironmentManager.Instance.ChangeEnvironmentType(gameplayEnvironment);
-			AudioManager.Voices.Play(scenarioDescriptor.IntroSkippedLine.Clip);
 			MagicStoneManager.Instance.SpawnFirstMagicStone();
 			MagicStoneManager.Instance.SetNextMagicSpawnAllowed(true);
 			CharacterManager.Instance.StartFirstWave();
@@ -81,20 +87,59 @@ namespace LD55.Game {
 			InputManager.Controls.Player.Enable();
 		}
 
-		private void HandlePortalActivated() => GameStat.HellReached = true;
+		private void HandlePortalActivated() {
+			GameStat.HellReached = true;
+			StartCoroutine(PlayInHell());
+		}
+
+		private IEnumerator PlayInHell() {
+			for (var index = 0; index < scenarioDescriptor.HellLines.Count; index++) {
+				var hellLine = scenarioDescriptor.HellLines[index];
+				yield return StartCoroutine(PlayLine(hellLine));
+				if (index == scenarioDescriptor.HellLines.Count - 2)
+					yield return new WaitForSeconds(5);
+			}
+
+			ui.ExitHell.Show();
+
+			var timeSpentInHell = 0f;
+			var nextLineTime = timeSpentInHell + 6;
+			var pissedPlayed = false;
+			var hellExited = false;
+			ui.ExitHell.OnExitHellClicked.AddListenerOnce(() => hellExited = true);
+			while (!hellExited) {
+				timeSpentInHell += Time.deltaTime;
+
+				if (nextLineTime < timeSpentInHell) {
+					if (!pissedPlayed && timeSpentInHell > 60) {
+						StartCoroutine(PlayLine(scenarioDescriptor.PissedNarratorLine));
+						pissedPlayed = true;
+					}
+					else {
+						StartCoroutine(PlayLine(scenarioDescriptor.RandomHellLoopLines));
+					}
+					nextLineTime = timeSpentInHell + 12;
+				}
+
+				yield return null;
+			}
+			GameEnvironmentManager.Instance.ChangeEnvironmentType(gameplayEnvironment);
+			ui.ExitHell.Hide();
+		}
+
 		private void HandleEnemyKilled() => GameStat.EnemiesKilled++;
 
 		private void HandleSummoningCompletedWithAccuracy(SummoningRecipe recipe, float accuracy) {
 			if (!PortalLinePlayed && recipe.IsPortal) {
 				PortalLinePlayed = true;
-				AudioManager.Voices.Play(scenarioDescriptor.PortalSpawnedLine.Clip);
+				StartCoroutine(PlayLine(scenarioDescriptor.PortalSpawnedLine));
 			}
 			GameStat.AccuracyPerSummoning.Add(accuracy);
 		}
 
 		private void HandlePlayerDied() {
 			GameEnvironmentManager.Instance.ChangeEnvironmentType(gameOverEnvironment);
-			AudioManager.Voices.Play(scenarioDescriptor.GameOverLine.Clip);
+			StartCoroutine(PlayLine(scenarioDescriptor.GameOverLine));
 			AudioManager.Music.ChangeClip(scenarioDescriptor.IntroMusic, false);
 			GameStat.TimePlayed = CharacterManager.Instance.PlayingTime;
 			StartCoroutine(ui.ShowGameOverScreen(GameStat, .5f));

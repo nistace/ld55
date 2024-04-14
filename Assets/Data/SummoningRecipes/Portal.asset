@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e12bf614ea426daaffe55e8ee70601, type: 3}
   m_Name: Portal
   m_EditorClassIdentifier: 
-  summoningLine: ABGHDECABCHH
+  summoningLine: ABGHDECABCHHAHCDEDEFAHGDECACHCABGHC
   summoningsPrefabs:
   - {fileID: 5034778334443166469, guid: 47b4a694eb077244587d9b91d4c4d2f3, type: 3}
   summoningSprite: {fileID: -2281739186948129152, guid: 687a2f2527d86794e8ab7be5792bcc50, type: 3}
   overrideDisplayName: 
   overrideRole: 
+  isPortal: 1

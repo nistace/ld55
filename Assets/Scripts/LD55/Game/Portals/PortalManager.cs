@@ -52,6 +52,7 @@ namespace LD55.Game {
 				CharacterManager.Instance.KillAllEnemies();
 				InteractionWithPortalsEnabled = false;
 				InteractionProgress = 0;
+				OnPortalActivated.Invoke();
 			}
 		}
 

@@ -77,7 +77,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 5894645237126458493}
   sortingGroup: {fileID: 0}
-  sortingGroupRenderer: {fileID: 0}
+  sortingGroupRenderer: {fileID: 8330774319482028343}
   animator: {fileID: 5896293808503659547}
 --- !u!114 &8784267323572128042
 MonoBehaviour:
@@ -161,5 +161,10 @@ Transform:
 --- !u!95 &5896293808503659547 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1160356261127867848, guid: 687a2f2527d86794e8ab7be5792bcc50, type: 3}
+  m_PrefabInstance: {fileID: 4740529152101142995}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &8330774319482028343 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3626916397498700004, guid: 687a2f2527d86794e8ab7be5792bcc50, type: 3}
   m_PrefabInstance: {fileID: 4740529152101142995}
   m_PrefabAsset: {fileID: 0}

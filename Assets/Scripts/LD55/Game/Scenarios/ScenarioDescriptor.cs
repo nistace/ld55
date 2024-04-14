@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using NiUtils.Extensions;
 using UnityEngine;
 
 namespace LD55.Game {
@@ -47,12 +49,12 @@ namespace LD55.Game {
 		[SerializeField] protected AudioClip introMusic;
 		[SerializeField] protected AudioClip gameplayMusic;
 
-		public ScenarioStep[] IntroSteps => introSteps;
+		public IEnumerable<ScenarioStep> IntroSteps => introSteps;
 		public ClipAndText IntroSkippedLine => introSkippedLine;
 		public ClipAndText GameOverLine => gameOverLine;
 		public ClipAndText PortalSpawnedLine => portalSpawnedLine;
-		public ClipAndText[] HellLines => hellLines;
-		public ClipAndText[] HellLoopLines => hellLoopLines;
+		public IReadOnlyList<ClipAndText> HellLines => hellLines;
+		public ClipAndText RandomHellLoopLines => hellLoopLines.Random();
 		public ClipAndText PissedNarratorLine => pissedNarratorLine;
 
 		public AudioClip IntroMusic => introMusic;
