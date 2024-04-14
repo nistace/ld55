@@ -8,6 +8,9 @@ namespace LD55.Game {
 	public class CharacterManager : MonoBehaviour {
 		private static CharacterManager CachedInstance { get; set; }
 		public static CharacterManager Instance => CachedInstance ? CachedInstance : CachedInstance = FindObjectOfType<CharacterManager>(true);
+		public static UnityEvent OnPlayerDied => Instance.Player.CharacterController.OnDied;
+		public static UnityEvent<float> OnSummoningCompletedWithAccuracy { get; } = new UnityEvent<float>();
+		public static UnityEvent OnEnemyKilled { get; } = new UnityEvent();
 
 		[SerializeField] protected EnemyWaveDescriptor enemyWaveDescriptor;
 		[SerializeField] protected PlayerController player;
@@ -15,14 +18,13 @@ namespace LD55.Game {
 		public PlayerController Player => player;
 		private int NextAiToRefresh { get; set; }
 		private int CurrentWaveIndex { get; set; }
+		public float PlayingTime { get; private set; }
 		private float CurrentWaveStartTime { get; set; }
 		private float CurrentWaveTime => Time.time - CurrentWaveStartTime;
 		private EnemyWaveDescriptor.Wave CurrentWave => enemyWaveDescriptor.GetWave(CurrentWaveIndex);
 		private int CurrentWaveCoefficient => enemyWaveDescriptor.GetWaveCoefficient(CurrentWaveIndex);
 		private List<AiCharacter> AllCharacters { get; } = new List<AiCharacter>();
 		private Dictionary<AiCharacter, float> EnemySpawnProgress { get; } = new Dictionary<AiCharacter, float>();
-
-		public UnityEvent OnPlayerDied => player.CharacterController.OnDied;
 
 		public void Start() {
 			CombatGlobalParameters.Clear();
@@ -46,7 +48,7 @@ namespace LD55.Game {
 		private void HandleAnyCharacterDied(CharacterController deadCharacter) {
 			CombatGlobalParameters.UnsubscribeTarget(deadCharacter);
 			AllCharacters.RemoveWhere(t => t.CharacterController == deadCharacter);
-			// TODO Handle dying in a proper way
+			if (deadCharacter.Team == Team.Enemy) OnEnemyKilled.Invoke();
 		}
 
 		public void Update() {
@@ -67,6 +69,8 @@ namespace LD55.Game {
 			if (player.CharacterController.IsDead) return;
 			if (!GameEnvironmentManager.Instance.SpawningAllowed) return;
 
+			PlayingTime += Time.deltaTime;
+
 			if (CurrentWaveTime > CurrentWave.Duration) {
 				CurrentWaveIndex++;
 				CurrentWaveStartTime = Time.time;
@@ -84,7 +88,10 @@ namespace LD55.Game {
 			}
 		}
 
-		private void HandleRecipeSummoned(SummoningRecipe summonedRecipe, Vector2 position) => Spawn(summonedRecipe.SummoningsPrefabs, position);
+		private void HandleRecipeSummoned(SummoningRecipe summonedRecipe, Vector2 position, float accuracy) {
+			Spawn(summonedRecipe.SummoningsPrefabs, position);
+			OnSummoningCompletedWithAccuracy.Invoke(accuracy);
+		}
 
 		private void Spawn(IReadOnlyList<AiCharacter> prefabs, Vector2 position) {
 			for (var index = 0; index < prefabs.Count; index++) {

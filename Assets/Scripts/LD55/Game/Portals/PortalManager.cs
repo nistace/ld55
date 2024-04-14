@@ -4,11 +4,13 @@ using LD55.Game.Portals;
 using LD55.Inputs;
 using NiUtils.Extensions;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace LD55.Game {
 	public class PortalManager : MonoBehaviour, IInteractableManager {
 		private static PortalManager CachedInstance { get; set; }
 		public static PortalManager Instance => CachedInstance ? CachedInstance : CachedInstance = FindObjectOfType<PortalManager>(true);
+		public static UnityEvent OnPortalActivated { get; } = new UnityEvent();
 
 		[SerializeField] protected float interactionRange = 1;
 		[SerializeField] protected float interactionTime = 1;

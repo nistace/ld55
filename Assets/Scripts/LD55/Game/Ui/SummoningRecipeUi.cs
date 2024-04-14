@@ -30,7 +30,7 @@ public class SummoningRecipeUi : MonoBehaviour {
 		Refresh();
 	}
 
-	private void HandleRecipeSummoned(SummoningRecipe recipe, Vector2 position) => RefreshCurrentRecipeControls();
+	private void HandleRecipeSummoned(SummoningRecipe recipe, Vector2 position, float _) => RefreshCurrentRecipeControls();
 
 	private void HandleSummoningCommandLineChanged() {
 		SetPage(Summoner.CurrentRecipeIndex);

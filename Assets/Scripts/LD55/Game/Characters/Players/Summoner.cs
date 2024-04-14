@@ -20,7 +20,7 @@ namespace LD55.Game {
 		public int CurrentRecipeIndex { get; private set; }
 		public SummoningRecipe CurrentRecipe => recipes[CurrentRecipeIndex];
 		public string CurrentSummoningLine { get; private set; }
-		public UnityEvent<SummoningRecipe, Vector2> OnRecipeSummoned { get; } = new UnityEvent<SummoningRecipe, Vector2>();
+		public UnityEvent<SummoningRecipe, Vector2, float> OnRecipeSummoned { get; } = new UnityEvent<SummoningRecipe, Vector2, float>();
 		public UnityEvent OnSummoningStateChanged { get; } = new UnityEvent();
 		public UnityEvent OnSummoningCommandLineChanged { get; } = new UnityEvent();
 		public int UnlockedRecipesCount => Mathf.Min(Level, recipes.Length);
@@ -91,8 +91,9 @@ namespace LD55.Game {
 			}
 			else if (CurrentRecipe.SummoningLine.Length == CurrentSummoningLine.Length) {
 				var recipe = CurrentRecipe;
+				var accuracy = (float)GetRecipeScore(CurrentRecipe.SummoningLine) / recipe.SummoningLine.Length;
 				CurrentSummoningLine = string.Empty;
-				OnRecipeSummoned.Invoke(recipe, summonLocation.position);
+				OnRecipeSummoned.Invoke(recipe, summonLocation.position, accuracy);
 			}
 
 			currentRecipeSummoningRenderer.sprite = CurrentRecipe.SummoningSprite;

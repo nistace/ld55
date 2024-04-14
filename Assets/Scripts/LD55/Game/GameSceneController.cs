@@ -1,6 +1,8 @@
 using LD55.Game.Ui;
 using LD55.Inputs;
+using NiUtils.Extensions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace LD55.Game {
 	public class GameSceneController : MonoBehaviour {
@@ -12,12 +14,12 @@ namespace LD55.Game {
 		private void Start() {
 			ProjectileManager.Clear();
 			ui.Recipe.Init(characterManager.Player.Summoner);
+			ui.GameOver.OnQuitButtonClicked.AddListenerOnce(HandleQuitButtonClicked);
 			InputManager.ControllerSprites = controlsSpriteLibrary.PSSprites;
 			scenarioManager.SkipIntro();
 		}
 
-		private void OnDisable() {
-			InputManager.Controls.Player.Disable();
-		}
+		private static void HandleQuitButtonClicked() => SceneManager.LoadScene("Menu");
+		private void OnDisable() => InputManager.Controls.Player.Disable();
 	}
 }
