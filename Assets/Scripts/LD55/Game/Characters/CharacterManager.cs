@@ -1,15 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using NiUtils.Extensions;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace LD55.Game {
 	public class CharacterManager : MonoBehaviour {
-		
 		private static CharacterManager CachedInstance { get; set; }
 		public static CharacterManager Instance => CachedInstance ? CachedInstance : CachedInstance = FindObjectOfType<CharacterManager>(true);
-		
-		
+
 		[SerializeField] protected EnemyWaveDescriptor enemyWaveDescriptor;
 		[SerializeField] protected PlayerController player;
 
@@ -66,6 +65,7 @@ namespace LD55.Game {
 
 		private void UpdateEnemyWave() {
 			if (player.CharacterController.IsDead) return;
+			if (!GameEnvironmentManager.Instance.SpawningAllowed) return;
 
 			if (CurrentWaveTime > CurrentWave.Duration) {
 				CurrentWaveIndex++;
@@ -102,6 +102,11 @@ namespace LD55.Game {
 			var character = Instantiate(prefab, position, Quaternion.identity, transform);
 			AllCharacters.Add(character);
 			CombatGlobalParameters.SubscribeTarget(character.CharacterController);
+		}
+
+		public void KillAllEnemies() {
+			var allEnemies = AllCharacters.Where(t => t.CharacterController.Team == Team.Enemy).ToArray();
+			allEnemies.ForEach(t => t.TakeDamage(90000));
 		}
 	}
 }

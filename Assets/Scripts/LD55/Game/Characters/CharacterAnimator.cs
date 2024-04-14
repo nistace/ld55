@@ -7,6 +7,7 @@ namespace LD55.Game {
 	public class CharacterAnimator : MonoBehaviour {
 		[SerializeField] protected CharacterController characterController;
 		[SerializeField] protected SortingGroup sortingGroup;
+		[SerializeField] protected SpriteRenderer sortingGroupRenderer;
 		[SerializeField] protected Animator animator;
 
 		private static readonly int movementXAnimParam = Animator.StringToHash("MovementX");
@@ -21,6 +22,7 @@ namespace LD55.Game {
 		private void Reset() {
 			characterController = GetComponent<CharacterController>();
 			sortingGroup = GetComponentInChildren<SortingGroup>();
+			sortingGroupRenderer = GetComponentInChildren<SpriteRenderer>();
 		}
 
 		private void Start() {
@@ -39,7 +41,8 @@ namespace LD55.Game {
 		}
 
 		private void LateUpdate() {
-			sortingGroup.sortingOrder = -Mathf.FloorToInt(100 * transform.position.y);
+			if (sortingGroup) sortingGroup.sortingOrder = -Mathf.FloorToInt(100 * transform.position.y);
+			if (sortingGroupRenderer) sortingGroupRenderer.sortingOrder = -Mathf.FloorToInt(100 * transform.position.y);
 			animator.SetFloat(movementXAnimParam, characterController.LastMovementNormalized.x);
 			animator.SetFloat(movementYAnimParam, characterController.LastMovementNormalized.y);
 			animator.SetBool(deadAnimParam, characterController.IsDead);

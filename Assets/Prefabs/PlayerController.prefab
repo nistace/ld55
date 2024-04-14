@@ -112,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 9200276193192124143}
   sortingGroup: {fileID: 7616967812734719231}
+  sortingGroupRenderer: {fileID: 0}
   animator: {fileID: 8556315523033920575}
 --- !u!114 &7316241893153184351
 MonoBehaviour:
@@ -130,6 +131,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 47866ce6c3131034eb6cbaf347a63aff, type: 2}
   - {fileID: 11400000, guid: c110a56b0f992864994523b3dfdf7507, type: 2}
   - {fileID: 11400000, guid: 11ef267800dff514f84cacf287169b35, type: 2}
+  - {fileID: 11400000, guid: 90ccd47484d8f2745b85debfba29cbed, type: 2}
   summonLocation: {fileID: 4638356852972550529}
   currentRecipeSummoningRenderer: {fileID: 1743853172000001334}
 --- !u!114 &888810301112417135

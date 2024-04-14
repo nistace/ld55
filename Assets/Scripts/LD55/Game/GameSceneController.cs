@@ -6,18 +6,14 @@ namespace LD55.Game {
 	public class GameSceneController : MonoBehaviour {
 		[SerializeField] protected ControlsSpriteLibrary controlsSpriteLibrary;
 		[SerializeField] protected CharacterManager characterManager;
+		[SerializeField] protected ScenarioManager scenarioManager;
 		[SerializeField] protected GameUi ui;
 
-		private void OnEnable() {
+		private void Start() {
 			ProjectileManager.Clear();
 			ui.Recipe.Init(characterManager.Player.Summoner);
-			characterManager.OnPlayerDied.AddListener(HandlePlayerDied);
-			InputManager.ControllerSprites = controlsSpriteLibrary.XboxSprites;
-			InputManager.Controls.Player.Enable();
-		}
-
-		private static void HandlePlayerDied() {
-			InputManager.Controls.Player.Disable();
+			InputManager.ControllerSprites = controlsSpriteLibrary.PSSprites;
+			scenarioManager.SkipIntro();
 		}
 
 		private void OnDisable() {

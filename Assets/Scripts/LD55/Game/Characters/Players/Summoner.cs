@@ -16,6 +16,7 @@ namespace LD55.Game {
 
 		public bool IsSummoning { get; private set; }
 		public int Level { get; set; }
+		public bool IsMaxLevel => Level >= recipes.Length;
 		public int CurrentRecipeIndex { get; private set; }
 		public SummoningRecipe CurrentRecipe => recipes[CurrentRecipeIndex];
 		public string CurrentSummoningLine { get; private set; }
@@ -38,13 +39,17 @@ namespace LD55.Game {
 		}
 
 		private void SetListenersEnabled(bool enabled) {
+			if (GameEnvironmentManager.Instance) GameEnvironmentManager.Instance.OnChangingEnvironment.SetListenerActive(HandleGameEnvironmentChanged, enabled);
 			InputManager.Controls.Player.Summon.SetAnyListenerOnce(HandleSummonInputChanged, enabled);
 		}
+
+		private void HandleGameEnvironmentChanged() => RefreshSummoning(IsSummoning, false);
 
 		private void HandleSummonInputChanged(InputAction.CallbackContext obj) => RefreshSummoning(obj.performed, false);
 
 		private void RefreshSummoning(bool summoning, bool forceRefresh) {
 			summoning &= UnlockedRecipesCount > 0;
+			summoning &= GameEnvironmentManager.Instance.SpawningAllowed;
 			if (IsSummoning == summoning && !forceRefresh) return;
 			IsSummoning = summoning;
 			CurrentSummoningLine = string.Empty;
@@ -62,7 +67,7 @@ namespace LD55.Game {
 
 		private void RefreshBestMatchingRecipe() {
 			var bestMatchingRecipeScore = GetRecipeScore(CurrentRecipe.SummoningLine);
-			for (var recipeIndex = 0; recipeIndex < recipes.Length; recipeIndex++) {
+			for (var recipeIndex = 0; recipeIndex < Level; recipeIndex++) {
 				if (recipeIndex == CurrentRecipeIndex) continue;
 				var recipe = recipes[recipeIndex];
 				var recipeScore = GetRecipeScore(recipe.SummoningLine);

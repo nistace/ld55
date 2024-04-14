@@ -4,17 +4,18 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace LD55.Game {
-	public class MagicStoneManager : MonoBehaviour {
+	public class MagicStoneManager : MonoBehaviour, IInteractableManager {
 		private static MagicStoneManager CachedInstance { get; set; }
 		public static MagicStoneManager Instance => CachedInstance ? CachedInstance : CachedInstance = FindObjectOfType<MagicStoneManager>(true);
 
 		[SerializeField] protected MagicStone prefab;
 		[SerializeField] protected float interactionRange = 1;
-		[SerializeField] protected float spawnDistanceToPlayer = 30;
+		[SerializeField] protected float[] spawnDistanceToPlayer = { 30f };
 		[SerializeField] protected float interactionTime = 2;
 
 		private MagicStone CurrentMagicStone { get; set; }
 		public Vector2 CurrentMagicStonePosition => CurrentMagicStone.Position;
+		public Vector2 CurrentInteractablePosition => CurrentMagicStone.Position;
 		public float InteractionProgress { get; private set; }
 
 		private void Start() => SpawnFirstMagicStone();
@@ -27,15 +28,16 @@ namespace LD55.Game {
 
 		public bool CanPlayerMoveToStone() {
 			if (!CurrentMagicStone) return false;
+			if (!CurrentMagicStone.CanInteract) return false;
 			if (CharacterManager.Instance.Player.CharacterController.IsDead) return false;
 			return true;
 		}
 
 		public bool CanPlayerInteract() {
 			if (!CurrentMagicStone) return false;
+			if (!CurrentMagicStone.CanInteract) return false;
 			if (CharacterManager.Instance.Player.CharacterController.IsDead) return false;
 			if (CharacterManager.Instance.Player.Summoner.IsSummoning) return false;
-			if (!CurrentMagicStone.CanInteract) return false;
 			return (CharacterManager.Instance.Player.Position - CurrentMagicStone.Position).sqrMagnitude < interactionRange * interactionRange;
 		}
 
@@ -46,7 +48,10 @@ namespace LD55.Game {
 			if (Mathf.Approximately(InteractionProgress, 1)) {
 				CharacterManager.Instance.Player.LevelUp();
 				CurrentMagicStone.Consume();
-				SpawnNextMagicStone(CharacterManager.Instance.Player.Position + Vector2.right.Rotate(Random.Range(0, 360)) * spawnDistanceToPlayer);
+				if (!CharacterManager.Instance.Player.Summoner.IsMaxLevel) {
+					var spawnOffset = Vector2.right.Rotate(Random.Range(0, 360)) * spawnDistanceToPlayer[CharacterManager.Instance.Player.Summoner.Level.Clamp(spawnDistanceToPlayer)];
+					SpawnNextMagicStone(CharacterManager.Instance.Player.Position + spawnOffset);
+				}
 				InteractionProgress = 0;
 			}
 		}

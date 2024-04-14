@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ed35be1f864de6af1086f970eaf375, type: 3}
+  m_Name: Portal
+  m_EditorClassIdentifier: 
+  sprite: {fileID: -2281739186948129152, guid: 687a2f2527d86794e8ab7be5792bcc50, type: 3}
+  team: 0
+  displayName: Portal
+  role: A Passage to Hell
+  maxHealth: 400
+  speed: 0
+  armor: 2

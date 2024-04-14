@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b3f2bb564f04d918a96268e45f425d9, type: 3}
+  m_Name: GameplayEnvironment
+  m_EditorClassIdentifier: 
+  background: {r: 0.6117647, g: 0.5882353, b: 0.5764706, a: 1}
+  summoningEnabled: 1
+  transitionDuration: 2
