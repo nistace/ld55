@@ -15,7 +15,7 @@ namespace LD55.Game.Ui {
 			interactBack.KeyText.enabled = false;
 			interactFront.Image.sprite = InputManager.ControllerSprites['H'];
 			interactFront.KeyText.enabled = InputManager.ControllerSprites.DisplayKey;
-			if (interactFront.KeyText.enabled) interactBack.KeyText.text = InputManager.GetKeyText('C');
+			if (interactFront.KeyText.enabled) interactFront.KeyText.text = InputManager.GetKeyText('C');
 		}
 
 		private void Update() {
