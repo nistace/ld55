@@ -24,6 +24,10 @@ MonoBehaviour:
     - {fileID: -7430170386413576109, guid: c24d81935b63b884f897ad8ff2002ae7, type: 3}
     displayKey: 1
     name: Keyboard
+    instructionToSummon: '[Press and hold Mouse Click Right to start summoning, then
+      hit the buttons as shown on the left]'
+    instructionToInteractWithRock: '[Move with WASD to get close to the magic rock.
+      When close enough, press E to interact with it.]'
   xboxSprites:
     sprites:
     - {fileID: -4340267356585682100, guid: c24d81935b63b884f897ad8ff2002ae7, type: 3}
@@ -36,6 +40,10 @@ MonoBehaviour:
     - {fileID: 6604966165149189446, guid: c24d81935b63b884f897ad8ff2002ae7, type: 3}
     displayKey: 0
     name: Xbox
+    instructionToSummon: '[Press and hold L1 to start summoning, then hit the buttons
+      as shown on the left]'
+    instructionToInteractWithRock: '[Move with th left joystick to get close to the
+      magic rock. When close enough, press A to interact with it.]'
   psSprites:
     sprites:
     - {fileID: -4340267356585682100, guid: c24d81935b63b884f897ad8ff2002ae7, type: 3}
@@ -48,3 +56,7 @@ MonoBehaviour:
     - {fileID: 2973969894192083567, guid: c24d81935b63b884f897ad8ff2002ae7, type: 3}
     displayKey: 0
     name: Playstation
+    instructionToSummon: '[Press and hold L1 to start summoning, then hit the buttons
+      as shown on the left]'
+    instructionToInteractWithRock: '[Move with th left joystick to get close to the
+      magic rock. When close enough, press X to interact with it.]'

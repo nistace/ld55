@@ -2955,6 +2955,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6273009933051051531, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
       propertyPath: m_Name
       value: Kid
@@ -2988,6 +2992,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5941237962440494696, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958890755436056777, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -3907,7 +3915,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 166880346013948783, guid: 015ab4ab4b020b743b6a8b4d256803f5, type: 3}
       propertyPath: m_text
-      value: The Kid and The Mud
+      value: The Kid And The Mud
       objectReference: {fileID: 0}
     - target: {fileID: 830312817324043941, guid: 015ab4ab4b020b743b6a8b4d256803f5, type: 3}
       propertyPath: m_Name

@@ -62,10 +62,14 @@ namespace LD55.Game {
 						while (!villageIdiotHasEntered) yield return null;
 						break;
 					case ScenarioDescriptor.ScenarioStep.WaitFor.RockTouched:
+						ui.ScenarioText.Show(InputManager.ControllerSprites.InstructionToInteractWithRock);
 						while (CharacterManager.Instance.Player.Summoner.Level == 0) yield return null;
+						ui.ScenarioText.Hide();
 						break;
 					case ScenarioDescriptor.ScenarioStep.WaitFor.SomethingSummoned:
+						ui.ScenarioText.Show(InputManager.ControllerSprites.InstructionToSummon);
 						while (GameStat.CreaturesSummoned < 1) yield return null;
+						ui.ScenarioText.Hide();
 						InputManager.Controls.Player.Disable();
 						break;
 					case ScenarioDescriptor.ScenarioStep.WaitFor.VillageIdiotLeft:

@@ -15,6 +15,7 @@ MonoBehaviour:
   summoningLine: DFFCCF
   summoningsPrefabs:
   - {fileID: 6548501338654174750, guid: 6a661ceb28cea5e49befe52b09c30f0f, type: 3}
-  summoningSprite: {fileID: 6237452611215512552, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
+  summoningSprite: {fileID: 2065836073637637110, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
   overrideDisplayName: 
   overrideRole: 
+  isPortal: 0
