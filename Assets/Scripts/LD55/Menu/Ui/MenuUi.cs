@@ -21,6 +21,7 @@ namespace LD55.Menu.Ui {
 		[SerializeField] protected Slider sfxSlider;
 		[SerializeField] protected Slider voiceSlider;
 		[SerializeField] private Button startGameButton;
+		[SerializeField] private Button quitButton;
 
 		public UnityEvent OnStartGameButtonClicked => startGameButton.onClick;
 
@@ -35,10 +36,11 @@ namespace LD55.Menu.Ui {
 			sfxSlider.SetValueWithoutNotify(AudioManager.Sfx.volume);
 			voiceSlider.onValueChanged.AddListenerOnce(HandleVoiceSliderChanged);
 			voiceSlider.SetValueWithoutNotify(AudioManager.Voices.volume);
+			quitButton.onClick.AddListenerOnce(Application.Quit);
 			RefreshControls();
 			RefreshSkip();
 		}
-		
+
 		private static void HandleMusicSliderChanged(float value) => AudioManager.Music.volume = value;
 		private static void HandleSfxSliderChanged(float value) => AudioManager.Sfx.volume = value;
 		private static void HandleVoiceSliderChanged(float value) => AudioManager.Voices.volume = value;
@@ -51,7 +53,6 @@ namespace LD55.Menu.Ui {
 		private void RefreshSkip() {
 			skipButtonText.text = "Skip Intro:" + (GameSceneController.SkipIntro ? "Yes" : "No");
 		}
-
 
 		private void HandleInputUiButtonClicked() {
 			if (InputManager.ControllerSprites == controlsSpriteLibrary.PSSprites) InputManager.ControllerSprites = controlsSpriteLibrary.XboxSprites;

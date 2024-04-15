@@ -25,7 +25,8 @@ MonoBehaviour:
     displayKey: 1
     name: Keyboard
     instructionToSummon: '[Press and hold Mouse Click Right to start summoning, then
-      hit the buttons as shown on the left]'
+      hit the buttons as shown on the left. When you can summon various creatures,
+      use TAB and SHIFT to navigate between the pages.]'
     instructionToInteractWithRock: '[Move with WASD to get close to the magic rock.
       When close enough, press E to interact with it.]'
   xboxSprites:
@@ -41,7 +42,8 @@ MonoBehaviour:
     displayKey: 0
     name: Xbox
     instructionToSummon: '[Press and hold L1 to start summoning, then hit the buttons
-      as shown on the left]'
+      as shown on the left. When you can summon various creatures, use L2 and R2
+      to navigate between the pages.]'
     instructionToInteractWithRock: '[Move with th left joystick to get close to the
       magic rock. When close enough, press A to interact with it.]'
   psSprites:
@@ -57,6 +59,7 @@ MonoBehaviour:
     displayKey: 0
     name: Playstation
     instructionToSummon: '[Press and hold L1 to start summoning, then hit the buttons
-      as shown on the left]'
+      as shown on the left. When you can summon various creatures, use L2 and R2
+      to navigate between the pages.]'
     instructionToInteractWithRock: '[Move with th left joystick to get close to the
       magic rock. When close enough, press X to interact with it.]'
