@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b3f2bb564f04d918a96268e45f425d9, type: 3}
   m_Name: GameplayEnvironment
   m_EditorClassIdentifier: 
-  background: {r: 0.6117647, g: 0.5882353, b: 0.5764706, a: 1}
-  summoningEnabled: 1
+  background: {r: 0.6132076, g: 0.5534295, b: 0.52354044, a: 1}
   transitionDuration: 2
+  spawningAllowed: 1

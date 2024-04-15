@@ -15,7 +15,7 @@ MonoBehaviour:
   sprite: {fileID: 6237452611215512552, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
   team: 0
   displayName: Fire Ball
-  role: 
+  role: Short Range Shooter
   maxHealth: 6
   speed: 1.5
   armor: 0

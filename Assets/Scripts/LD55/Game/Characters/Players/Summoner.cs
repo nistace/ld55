@@ -16,27 +16,18 @@ namespace LD55.Game {
 		[SerializeField] protected AudioClip[] clips;
 
 		public bool IsSummoning { get; private set; }
-		public int Level { get; set; }
-		public bool IsMaxLevel {
-			get { return Level >= recipes.Length; }
-		}
-
+		public int Level { get; private set; }
+		public bool IsMaxLevel => Level >= recipes.Length;
 		public int CurrentRecipeIndex { get; private set; }
-		public SummoningRecipe CurrentRecipe {
-			get { return recipes[CurrentRecipeIndex]; }
-		}
-
+		public SummoningRecipe CurrentRecipe => recipes[CurrentRecipeIndex];
 		public string CurrentSummoningLine { get; private set; }
+		public int UnlockedRecipesCount => Mathf.Min(Level, recipes.Length);
+		public bool IsCurrentRecipeLocked => CurrentSummoningLine.Length >= LineLengthToLockRecipe;
+
 		public UnityEvent<SummoningRecipe, Vector2, float> OnRecipeSummoned { get; } = new UnityEvent<SummoningRecipe, Vector2, float>();
+		public UnityEvent<float> OnCommandFailedWithAccuracy { get; } = new UnityEvent<float>();
 		public UnityEvent OnSummoningStateChanged { get; } = new UnityEvent();
 		public UnityEvent OnSummoningCommandLineChanged { get; } = new UnityEvent();
-		public int UnlockedRecipesCount {
-			get { return Mathf.Min(Level, recipes.Length); }
-		}
-
-		public bool IsCurrentRecipeLocked {
-			get { return CurrentSummoningLine.Length >= LineLengthToLockRecipe; }
-		}
 
 		private void Start() {
 			RefreshSummoning(false, true);
@@ -105,6 +96,7 @@ namespace LD55.Game {
 				RefreshBestMatchingRecipe();
 			}
 			else if ((float)(CurrentSummoningLine.Length - GetRecipeScore(CurrentRecipe.SummoningLine)) / CurrentSummoningLine.Length >= MissesRatioToCancelSummoning) {
+				OnCommandFailedWithAccuracy.Invoke(1 - (float)(CurrentSummoningLine.Length - GetRecipeScore(CurrentRecipe.SummoningLine)) / CurrentSummoningLine.Length);
 				CurrentSummoningLine = string.Empty;
 			}
 			else if (CurrentRecipe.SummoningLine.Length == CurrentSummoningLine.Length) {
@@ -170,6 +162,11 @@ namespace LD55.Game {
 			if (IsCurrentRecipeLocked) return;
 			CurrentRecipeIndex = index.PosMod(UnlockedRecipesCount);
 			currentRecipeSummoningRenderer.sprite = CurrentRecipe.SummoningSprite;
+		}
+
+		public void LevelUp() {
+			Level++;
+			CurrentRecipeIndex = Level.Clamp(0, UnlockedRecipesCount - 1);
 		}
 	}
 }

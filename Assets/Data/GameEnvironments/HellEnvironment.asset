@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b3f2bb564f04d918a96268e45f425d9, type: 3}
   m_Name: HellEnvironment
   m_EditorClassIdentifier: 
-  background: {r: 0.6037736, g: 0.39154646, b: 0.36739054, a: 1}
+  background: {r: 0.509434, g: 0.2953275, b: 0.27153793, a: 1}
   transitionDuration: 1
   spawningAllowed: 0

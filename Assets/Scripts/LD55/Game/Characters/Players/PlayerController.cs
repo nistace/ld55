@@ -23,7 +23,7 @@ namespace LD55.Game {
 		public void TakeDamage(int damage) => characterController.TakeDamage(damage);
 
 		public void LevelUp() {
-			Summoner.Level++;
+			Summoner.LevelUp();
 		}
 	}
 }

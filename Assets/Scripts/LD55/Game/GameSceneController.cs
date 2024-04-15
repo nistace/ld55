@@ -6,11 +6,16 @@ using UnityEngine.SceneManagement;
 
 namespace LD55.Game {
 	public class GameSceneController : MonoBehaviour {
-		public static bool SkipIntro { get; set; } = false;
+		public static bool SkipIntro { get; set; } = true;
 
+		[SerializeField] protected ControlsSpriteLibrary controlsSpriteLibrary;
 		[SerializeField] protected CharacterManager characterManager;
 		[SerializeField] protected ScenarioManager scenarioManager;
 		[SerializeField] protected GameUi ui;
+
+		private void Awake() {
+			InputManager.ControllerSprites ??= controlsSpriteLibrary.KeyboardSprites;
+		}
 
 		private void Start() {
 			ProjectileManager.Clear();

@@ -12,6 +12,8 @@ namespace LD55.Game {
 		[SerializeField] protected GameEnvironmentType gameOverEnvironment;
 		[SerializeField] protected GameUi ui;
 		[SerializeField] protected ScenarioDescriptor scenarioDescriptor;
+		[SerializeField] protected ScenarioVillageIdiot introVillageIdiot;
+		[SerializeField] protected MudSpawner mudSpawner;
 
 		private GameStatData GameStat { get; } = new GameStatData();
 		private bool PortalLinePlayed { get; set; }
@@ -19,6 +21,7 @@ namespace LD55.Game {
 		private void Start() {
 			CharacterManager.OnPlayerDied.AddListenerOnce(HandlePlayerDied);
 			CharacterManager.OnSummoningCompletedWithAccuracy.AddListenerOnce(HandleSummoningCompletedWithAccuracy);
+			CharacterManager.Instance.Player.Summoner.OnCommandFailedWithAccuracy.AddListenerOnce(HandleCommandFailedWithAccuracy);
 			CharacterManager.OnEnemyKilled.AddListenerOnce(HandleEnemyKilled);
 			PortalManager.OnPortalActivated.AddListenerOnce(HandlePortalActivated);
 		}
@@ -26,11 +29,16 @@ namespace LD55.Game {
 		public void StartWithIntro() => StartCoroutine(PlayIntro());
 
 		private IEnumerator PlayIntro() {
+			mudSpawner.enabled = true;
 			AudioManager.Music.ChangeClip(scenarioDescriptor.IntroMusic, true);
+			var villageIdiotHasEntered = false;
+			var villageIdiotHasExited = false;
+
 			foreach (var scenarioStep in scenarioDescriptor.IntroSteps) {
 				switch (scenarioStep.TheTrigger) {
 					case ScenarioDescriptor.ScenarioStep.Trigger.Nothing: break;
-					case ScenarioDescriptor.ScenarioStep.Trigger.VillageIdiotEnter: // TODO
+					case ScenarioDescriptor.ScenarioStep.Trigger.VillageIdiotEnter:
+						StartCoroutine(introVillageIdiot.PlayEntering(() => villageIdiotHasEntered = true));
 						break;
 					case ScenarioDescriptor.ScenarioStep.Trigger.RockSpawn:
 						InputManager.Controls.Player.Enable();
@@ -38,7 +46,11 @@ namespace LD55.Game {
 						MagicStoneManager.Instance.SpawnFirstMagicStone();
 						AudioManager.Music.ChangeClip(scenarioDescriptor.GameplayMusic, false);
 						break;
-					case ScenarioDescriptor.ScenarioStep.Trigger.VillageIdiotExit: // TODO
+					case ScenarioDescriptor.ScenarioStep.Trigger.VillageIdiotExit:
+						StartCoroutine(introVillageIdiot.PlayExiting(() => villageIdiotHasExited = true));
+						break;
+					case ScenarioDescriptor.ScenarioStep.Trigger.StopPlayingWithMud:
+						mudSpawner.enabled = false;
 						break;
 					default:
 						throw new ArgumentOutOfRangeException();
@@ -46,7 +58,8 @@ namespace LD55.Game {
 
 				switch (scenarioStep.TheWaitFor) {
 					case ScenarioDescriptor.ScenarioStep.WaitFor.Nothing: break;
-					case ScenarioDescriptor.ScenarioStep.WaitFor.VillageIdiotInScene: // TODO
+					case ScenarioDescriptor.ScenarioStep.WaitFor.VillageIdiotInScene:
+						while (!villageIdiotHasEntered) yield return null;
 						break;
 					case ScenarioDescriptor.ScenarioStep.WaitFor.RockTouched:
 						while (CharacterManager.Instance.Player.Summoner.Level == 0) yield return null;
@@ -55,7 +68,8 @@ namespace LD55.Game {
 						while (GameStat.CreaturesSummoned < 1) yield return null;
 						InputManager.Controls.Player.Disable();
 						break;
-					case ScenarioDescriptor.ScenarioStep.WaitFor.VillageIdiotLeft: // TODO
+					case ScenarioDescriptor.ScenarioStep.WaitFor.VillageIdiotLeft:
+						while (!villageIdiotHasExited) yield return null;
 						break;
 					default: throw new ArgumentOutOfRangeException();
 				}
@@ -86,6 +100,7 @@ namespace LD55.Game {
 			CharacterManager.Instance.StartFirstWave();
 			AudioManager.Music.ChangeClip(scenarioDescriptor.GameplayMusic, false);
 			InputManager.Controls.Player.Enable();
+			mudSpawner.enabled = false;
 		}
 
 		private void HandlePortalActivated() {
@@ -135,8 +150,11 @@ namespace LD55.Game {
 				PortalLinePlayed = true;
 				StartCoroutine(PlayLine(scenarioDescriptor.PortalSpawnedLine));
 			}
+			GameStat.CreaturesSummoned++;
 			GameStat.AccuracyPerSummoning.Add(accuracy);
 		}
+
+		private void HandleCommandFailedWithAccuracy(float accuracy) => GameStat.AccuracyPerSummoning.Add(accuracy);
 
 		private void HandlePlayerDied() {
 			GameEnvironmentManager.Instance.ChangeEnvironmentType(gameOverEnvironment);

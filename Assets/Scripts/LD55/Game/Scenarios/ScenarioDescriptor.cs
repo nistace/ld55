@@ -26,7 +26,8 @@ namespace LD55.Game {
 				Nothing = 0,
 				VillageIdiotEnter = 1,
 				RockSpawn = 2,
-				VillageIdiotExit = 3
+				VillageIdiotExit = 3,
+				StopPlayingWithMud = 4
 			}
 
 			[SerializeField] protected WaitFor waitFor;

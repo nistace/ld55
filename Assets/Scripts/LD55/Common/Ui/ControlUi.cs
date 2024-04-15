@@ -8,6 +8,9 @@ public class ControlUi : MonoBehaviour {
 	[SerializeField] protected TMP_Text keyText;
 	[SerializeField] protected Image missImage;
 
+	public Image Image => control;
+	public TMP_Text KeyText => keyText;
+
 	public void SetControl(char control) {
 		this.control.sprite = InputManager.ControllerSprites[control];
 		keyText.enabled = InputManager.ControllerSprites.DisplayKey;

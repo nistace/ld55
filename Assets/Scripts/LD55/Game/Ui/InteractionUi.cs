@@ -1,16 +1,21 @@
-﻿using NiUtils.Extensions;
+﻿using LD55.Inputs;
+using NiUtils.Extensions;
 using NiUtils.StaticUtils;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace LD55.Game.Ui {
 	public class InteractionUi : MonoBehaviour {
 		[SerializeField] protected Transform interactIcon;
-		[SerializeField] protected Image interactBack;
-		[SerializeField] protected Image interactFront;
+		[SerializeField] protected ControlUi interactBack;
+		[SerializeField] protected ControlUi interactFront;
 
 		private void Start() {
 			interactIcon.gameObject.SetActive(false);
+			interactBack.Image.sprite = InputManager.ControllerSprites['H'];
+			interactBack.KeyText.enabled = false;
+			interactFront.Image.sprite = InputManager.ControllerSprites['H'];
+			interactFront.KeyText.enabled = InputManager.ControllerSprites.DisplayKey;
+			if (interactFront.KeyText.enabled) interactBack.KeyText.text = InputManager.GetKeyText('C');
 		}
 
 		private void Update() {
@@ -21,8 +26,8 @@ namespace LD55.Game.Ui {
 			if (TryGetActiveInteractionManager(out var interactableManager)) {
 				interactIcon.gameObject.SetActive(true);
 				interactIcon.position = CameraUtils.main.WorldToScreenPoint(interactableManager.CurrentInteractablePosition);
-				interactBack.color = interactBack.color.With(a: Mathf.Approximately(interactableManager.InteractionProgress, 0) ? .8f : .5f);
-				interactFront.fillAmount = interactableManager.InteractionProgress;
+				interactBack.MarkAsNotMissed(Color.white.With(a: Mathf.Approximately(interactableManager.InteractionProgress, 0) ? .8f : .5f));
+				interactFront.Image.fillAmount = interactableManager.InteractionProgress;
 			}
 			else {
 				interactIcon.gameObject.SetActive(false);

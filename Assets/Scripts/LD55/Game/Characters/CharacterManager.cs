@@ -32,7 +32,6 @@ namespace LD55.Game {
 			enemyWaveDescriptor.AllDistinctSpawnableEnemies().ForEach(t => EnemySpawnProgress.Add(t, 0));
 
 			player.Summoner.OnRecipeSummoned.AddListenerOnce(HandleRecipeSummoned);
-
 		}
 
 		private void OnEnable() {
@@ -85,7 +84,7 @@ namespace LD55.Game {
 					var enemyPrefab = waveEnemy.CharacterPrefab;
 					EnemySpawnProgress[enemyPrefab] += CurrentWaveCoefficient * waveEnemy.SpawnRateCurve.Evaluate(CurrentWaveTime / CurrentWave.Duration) * Time.deltaTime;
 					while (EnemySpawnProgress[enemyPrefab] > 1) {
-						Spawn(enemyPrefab, player.Position + Vector2.right.Rotate(Random.Range(0, 360)) * enemyWaveDescriptor.SpawnDistance);
+						Spawn(enemyPrefab, player.Position + Vector2.right.Rotate(Random.Range(0, 360)) * enemyWaveDescriptor.SpawnDistance, 1);
 						EnemySpawnProgress[enemyPrefab]--;
 					}
 				}
@@ -93,11 +92,11 @@ namespace LD55.Game {
 		}
 
 		private void HandleRecipeSummoned(SummoningRecipe summonedRecipe, Vector2 position, float accuracy) {
-			Spawn(summonedRecipe.SummoningsPrefabs, position);
+			Spawn(summonedRecipe.SummoningsPrefabs, position, accuracy);
 			OnSummoningCompletedWithAccuracy.Invoke(summonedRecipe, accuracy);
 		}
 
-		private void Spawn(IReadOnlyList<AiCharacter> prefabs, Vector2 position) {
+		private void Spawn(IReadOnlyList<AiCharacter> prefabs, Vector2 position, float initialHealthRatio) {
 			for (var index = 0; index < prefabs.Count; index++) {
 				var prefab = prefabs[index];
 				var offset = index switch {
@@ -105,12 +104,13 @@ namespace LD55.Game {
 					< 7 => (Vector2)(Quaternion.Euler(0, 0, index * 60) * new Vector2(0, .2f)),
 					_ => Vector2.zero
 				};
-				Spawn(prefab, position + offset);
+				Spawn(prefab, position + offset, initialHealthRatio);
 			}
 		}
 
-		private void Spawn(AiCharacter prefab, Vector2 position) {
+		private void Spawn(AiCharacter prefab, Vector2 position, float initialHealthRatio) {
 			var character = Instantiate(prefab, position, Quaternion.identity, transform);
+			character.TakeDamage(Mathf.FloorToInt((1 - initialHealthRatio) * character.CharacterController.Type.MaxHealth));
 			AllCharacters.Add(character);
 			CombatGlobalParameters.SubscribeTarget(character.CharacterController);
 		}

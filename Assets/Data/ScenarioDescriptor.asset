@@ -37,7 +37,7 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: 113963a5d2b854c4b967a83f0c2bda9f, type: 3}
       text: '"Sorcerer!" '
   - waitFor: 0
-    trigger: 0
+    trigger: 4
     line:
       clip: {fileID: 8300000, guid: 29814151f834c0541a9b1f7f72ccc963, type: 3}
       text: Can you believe it? Just because the kid was playing with dirt and water

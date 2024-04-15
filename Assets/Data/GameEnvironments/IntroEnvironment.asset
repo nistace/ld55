@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b3f2bb564f04d918a96268e45f425d9, type: 3}
   m_Name: IntroEnvironment
   m_EditorClassIdentifier: 
-  background: {r: 0.6982309, g: 0.8207547, b: 0.60008013, a: 1}
+  background: {r: 0.69730824, g: 0.8962264, b: 0.5368903, a: 1}
   transitionDuration: 2
   spawningAllowed: 0
