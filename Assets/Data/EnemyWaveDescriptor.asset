@@ -43,7 +43,7 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-  - duration: 130
+  - duration: 160
     waveEnemies:
     - characterPrefab: {fileID: 3805311355601562709, guid: c76f18ae1303efb43b73bd107f2f6f69, type: 3}
       spawnRateCurve:
@@ -145,8 +145,8 @@ MonoBehaviour:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 1
-          value: 0.4
+          time: 1.0013123
+          value: 0.32820514
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -328,8 +328,8 @@ MonoBehaviour:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0
-          value: 0.34812775
+          time: 0.001312336
+          value: 0.32110605
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -337,8 +337,8 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.39671937
-          value: 0.34742814
+          time: 0.40984192
+          value: 0.3271187
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -398,8 +398,8 @@ MonoBehaviour:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 1
-          value: 0.4
+          time: 0.9947507
+          value: 0.369428
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -432,8 +432,8 @@ MonoBehaviour:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.78883666
-          value: 0.18218344
+          time: 0.7573406
+          value: 0.14786392
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -441,8 +441,8 @@ MonoBehaviour:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 1
-          value: 0.3
+          time: 0.9947507
+          value: 0.1781065
           inSlope: 0
           outSlope: 0
           tangentMode: 0

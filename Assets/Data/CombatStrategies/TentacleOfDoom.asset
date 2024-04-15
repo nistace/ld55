@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0d7b8cbc0f44a95b795827c7cee216d, type: 3}
   m_Name: TentacleOfDoom
   m_EditorClassIdentifier: 
-  attackRange: 3.5
+  attackRange: 4.5
   projectilePrefab: {fileID: 3398619392232237334, guid: 819916f2c86fca741bb8c168f7804c0c, type: 3}
-  attackSpeed: 1.2
+  attackSpeed: 1.5
   originOffset: {x: 0, y: 0.2}
   destinationOffset: {x: 0, y: 0.1}
