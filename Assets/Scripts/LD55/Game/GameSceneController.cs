@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 namespace LD55.Game {
 	public class GameSceneController : MonoBehaviour {
-		public static bool SkipIntro { get; set; } = true;
+		public static bool SkipIntro { get; set; }
 
 		[SerializeField] protected ControlsSpriteLibrary controlsSpriteLibrary;
 		[SerializeField] protected CharacterManager characterManager;
