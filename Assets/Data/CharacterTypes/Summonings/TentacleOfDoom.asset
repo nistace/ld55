@@ -16,7 +16,7 @@ MonoBehaviour:
   team: 0
   displayName: Tentacle of Doom
   role: Fixed Shooter
-  maxHealth: 20
+  maxHealth: 40
   speed: 0
   armor: 0
   damagedClip:

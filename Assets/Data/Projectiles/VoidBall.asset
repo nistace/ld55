@@ -55,6 +55,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  damage: 4
+  damage: 5
   rightToForward: 0
   shotClip: {fileID: 8300000, guid: 77d50662b51577a42996e9bbc41fd60a, type: 3}
