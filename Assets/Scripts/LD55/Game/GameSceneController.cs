@@ -14,7 +14,7 @@ namespace LD55.Game {
 		[SerializeField] protected GameUi ui;
 
 		private void Awake() {
-			InputManager.ControllerSprites ??= controlsSpriteLibrary.KeyboardSprites;
+			InputManager.ControllerSprites ??= controlsSpriteLibrary.PSSprites;
 		}
 
 		private void Start() {

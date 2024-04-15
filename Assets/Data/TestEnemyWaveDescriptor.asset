@@ -17,36 +17,27 @@ MonoBehaviour:
     waveEnemies: []
   waves: []
   finalInfiniteWave:
-    duration: 5
+    duration: 50
     waveEnemies:
-    - characterPrefab: {fileID: 3805311355601562709, guid: a969393753a61be479fc3413de0324ea, type: 3}
+    - characterPrefab: {fileID: 3805311355601562709, guid: 8e0bc6114d1c8914c9198d68f4981e7d, type: 3}
       spawnRateCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 1
+          value: 0.5
           inSlope: 0
           outSlope: 0
-          tangentMode: 0
+          tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.04199616
-          value: 0.09564209
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
           time: 1
-          value: 0
+          value: 0.5
           inSlope: 0
           outSlope: 0
-          tangentMode: 0
+          tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ed35be1f864de6af1086f970eaf375, type: 3}
+  m_Name: TentacleOfDoom
+  m_EditorClassIdentifier: 
+  sprite: {fileID: -454222918163188239, guid: d6574406a77426e4591149c4c04a5de4, type: 3}
+  team: 0
+  displayName: Tentacle of Doom
+  role: Fixed Shooter
+  maxHealth: 20
+  speed: 0
+  armor: 0
+  damagedClip:
+  - {fileID: 8300000, guid: 1b0bc55d9cee65647a5b5ce2e9b178f1, type: 3}
+  deadClip:
+  - {fileID: 8300000, guid: 565ec9a1fc6728144ab08f9af5adb9e7, type: 3}
+  - {fileID: 8300000, guid: f6f321fbf7471004ab78dbbd4aa6467e, type: 3}
+  - {fileID: 8300000, guid: f1a86a076d29e3e46aad0d09d274f6a2, type: 3}
+  - {fileID: 8300000, guid: 6b6fdec0b58cea44d9288b8a0116cbe7, type: 3}

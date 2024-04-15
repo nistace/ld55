@@ -16,7 +16,7 @@ MonoBehaviour:
     duration: 0
     waveEnemies: []
   waves:
-  - duration: 80
+  - duration: 70
     waveEnemies:
     - characterPrefab: {fileID: 3805311355601562709, guid: c76f18ae1303efb43b73bd107f2f6f69, type: 3}
       spawnRateCurve:
@@ -43,7 +43,7 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-  - duration: 120
+  - duration: 130
     waveEnemies:
     - characterPrefab: {fileID: 3805311355601562709, guid: c76f18ae1303efb43b73bd107f2f6f69, type: 3}
       spawnRateCurve:
@@ -156,7 +156,7 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-  - duration: 100
+  - duration: 110
     waveEnemies:
     - characterPrefab: {fileID: 3805311355601562709, guid: 5fb461398ada9644d810354aed6d08b8, type: 3}
       spawnRateCurve:
@@ -278,7 +278,7 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-  - duration: 120
+  - duration: 100
     waveEnemies:
     - characterPrefab: {fileID: 3805311355601562709, guid: 5fb461398ada9644d810354aed6d08b8, type: 3}
       spawnRateCurve:
@@ -452,8 +452,85 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+  - duration: 60
+    waveEnemies:
+    - characterPrefab: {fileID: 3805311355601562709, guid: 8e0bc6114d1c8914c9198d68f4981e7d, type: 3}
+      spawnRateCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0.3
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0.3
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - characterPrefab: {fileID: 3805311355601562709, guid: a969393753a61be479fc3413de0324ea, type: 3}
+      spawnRateCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0.3
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0.3
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - characterPrefab: {fileID: 3805311355601562709, guid: 69a03a123fdedf8429fbc10cf2438ed6, type: 3}
+      spawnRateCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0.3
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0.3
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
   finalInfiniteWave:
-    duration: 30
+    duration: 50
     waveEnemies:
     - characterPrefab: {fileID: 3805311355601562709, guid: c76f18ae1303efb43b73bd107f2f6f69, type: 3}
       spawnRateCurve:
@@ -530,4 +607,79 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-  spawnDistance: 10
+    - characterPrefab: {fileID: 3805311355601562709, guid: 8e0bc6114d1c8914c9198d68f4981e7d, type: 3}
+      spawnRateCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - characterPrefab: {fileID: 3805311355601562709, guid: a969393753a61be479fc3413de0324ea, type: 3}
+      spawnRateCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - characterPrefab: {fileID: 3805311355601562709, guid: 69a03a123fdedf8429fbc10cf2438ed6, type: 3}
+      spawnRateCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  spawnDistance: 12

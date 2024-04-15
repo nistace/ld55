@@ -8428,6 +8428,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7316241893153184351, guid: 18149c3f63c62d0458a735e40191b9bc, type: 3}
+      propertyPath: recipes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316241893153184351, guid: 18149c3f63c62d0458a735e40191b9bc, type: 3}
+      propertyPath: recipes.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1b8b4b57bc63055499e44606c3b46357, type: 2}
+    - target: {fileID: 7316241893153184351, guid: 18149c3f63c62d0458a735e40191b9bc, type: 3}
+      propertyPath: recipes.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: ccf3db8eaaf42094f8a4a84347a1f5df, type: 2}
+    - target: {fileID: 7316241893153184351, guid: 18149c3f63c62d0458a735e40191b9bc, type: 3}
+      propertyPath: recipes.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 47866ce6c3131034eb6cbaf347a63aff, type: 2}
+    - target: {fileID: 7316241893153184351, guid: 18149c3f63c62d0458a735e40191b9bc, type: 3}
+      propertyPath: recipes.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: c110a56b0f992864994523b3dfdf7507, type: 2}
+    - target: {fileID: 7316241893153184351, guid: 18149c3f63c62d0458a735e40191b9bc, type: 3}
+      propertyPath: recipes.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 11ef267800dff514f84cacf287169b35, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

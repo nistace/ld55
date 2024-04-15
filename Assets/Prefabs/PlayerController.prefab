@@ -131,6 +131,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 47866ce6c3131034eb6cbaf347a63aff, type: 2}
   - {fileID: 11400000, guid: c110a56b0f992864994523b3dfdf7507, type: 2}
   - {fileID: 11400000, guid: 11ef267800dff514f84cacf287169b35, type: 2}
+  - {fileID: 11400000, guid: 1b8b4b57bc63055499e44606c3b46357, type: 2}
   - {fileID: 11400000, guid: 90ccd47484d8f2745b85debfba29cbed, type: 2}
   summonLocation: {fileID: 4638356852972550529}
   currentRecipeSummoningRenderer: {fileID: 1743853172000001334}
